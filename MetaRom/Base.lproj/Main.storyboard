@@ -948,38 +948,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set x of x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2f-Zy-LrZ">
-                                        <rect key="frame" x="167" y="37" width="71" height="21"/>
+                                        <rect key="frame" x="167" y="8" width="71" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 of 15 Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chH-Mo-t9W">
-                                        <rect key="frame" x="157" y="66" width="95" height="21"/>
+                                        <rect key="frame" x="157" y="37" width="95" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMa-Pl-nJ1">
-                                        <rect key="frame" x="137" y="8" width="130" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pause.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-Tx-GOy">
-                                        <rect key="frame" x="183" y="105.33333333333303" width="38" height="59"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="arrowtriangle.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3WK-HX-YbQ">
-                                        <rect key="frame" x="248" y="102.66666666666652" width="48" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="arrowtriangle.left.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Sxi-jS-AVd">
-                                        <rect key="frame" x="124" y="94.666666666666515" width="43" height="82"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fcc-rq-YoJ">
                                         <rect key="frame" x="8" y="99" width="392" height="4"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1009,9 +990,34 @@
                                             <action selector="showInstructions:" destination="hS7-Wt-yMF" eventType="touchUpInside" id="t3y-yq-MX8"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMk-ob-y1F">
+                                        <rect key="frame" x="36" y="117" width="128" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Next Exercise"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paz-pl-q8B">
+                                        <rect key="frame" x="266" y="117" width="70" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Notes"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbx-9p-l8M">
+                                        <rect key="frame" x="188" y="117" width="33" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="II"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254908080000002" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMa-Pl-nJ1">
+                                <rect key="frame" x="142" y="520" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4w5-G6-LK5"/>
                         <color key="backgroundColor" red="0.1019607843" green="0.1215686275" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -1031,11 +1037,15 @@
                         <outlet property="endSessionButton" destination="NJ9-Fg-seF" id="XXs-HN-Zqi"/>
                         <outlet property="exerciseInfoView" destination="huA-gF-Jwu" id="pYT-ju-Mmt"/>
                         <outlet property="feedbackLabel" destination="rMa-Pl-nJ1" id="Jjp-ls-o1E"/>
+                        <outlet property="instructionButton" destination="zXi-as-guy" id="KZ0-Q1-LCp"/>
                         <outlet property="lineChart" destination="yrl-Gc-5bF" id="UgR-Wr-S0z"/>
                         <outlet property="lowerSensorActivity" destination="Ufb-jf-HgK" id="mbx-jP-rXL"/>
                         <outlet property="lowerSensorBattery" destination="psh-9U-y3s" id="BCp-QV-BZa"/>
                         <outlet property="lowerSensorColorView" destination="zTH-8L-hCC" id="Ydo-cc-xrz"/>
                         <outlet property="lowerSensorStateLabel" destination="A2C-Sn-0fz" id="004-V8-hY5"/>
+                        <outlet property="nextExerciseButton" destination="NMk-ob-y1F" id="XnE-jk-dz3"/>
+                        <outlet property="notesButton" destination="Paz-pl-q8B" id="BiS-OC-Lrd"/>
+                        <outlet property="pauseButton" destination="lbx-9p-l8M" id="y3A-nA-tAb"/>
                         <outlet property="progressView" destination="fcc-rq-YoJ" id="1yt-wi-EJ3"/>
                         <outlet property="repCountLabel" destination="chH-Mo-t9W" id="YtH-Ts-Hm1"/>
                         <outlet property="setCountLabel" destination="T2f-Zy-LrZ" id="3QR-eD-2aa"/>
@@ -1090,7 +1100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4r-oe-tdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3703.7383177570091" y="864.36285097192228"/>
+            <point key="canvasLocation" x="5936" y="829"/>
         </scene>
         <!--Add Edit Patient View Controller-->
         <scene sceneID="JLE-Cl-IlB">
@@ -1904,6 +1914,42 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
             </objects>
             <point key="canvasLocation" x="2749" y="-97"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="LhV-eT-qbQ">
+            <objects>
+                <viewController id="ynF-b7-vGn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gCU-1R-DRW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63m-YQ-h0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3699" y="-119"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TZ7-QQ-y6v">
+            <objects>
+                <viewController id="kC4-1g-zxq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5y-ui-h0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904" y="-1908"/>
+        </scene>
+        <!--End Session View Controller-->
+        <scene sceneID="Ref-n8-sn0">
+            <objects>
+                <viewController id="XMi-j9-hn4" customClass="EndSessionViewController" customModule="MetaRom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hFi-iQ-tbo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ool-UX-ckw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3887" y="1016"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="Dyd-P0-vEb">
@@ -1917,8 +1963,6 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
         <segue reference="QpQ-qN-r7Q"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrowtriangle.left.fill" catalog="system" width="128" height="113"/>
-        <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
         <image name="cardBackground" width="352" height="295"/>
         <image name="imageView:psh-9U-y3s:image" width="24" height="11">
             <mutableData key="keyedArchiveRepresentation">
@@ -2435,7 +2479,6 @@ AAAAaAAAAAAAAAAAAAAAAAAAdbw
         <image name="leftHipPlacement" width="219" height="360.5"/>
         <image name="metawearPressButton" width="322" height="178"/>
         <image name="patientTableBackground" width="1274" height="840"/>
-        <image name="pause.fill" catalog="system" width="117" height="128"/>
         <image name="romGraphBackground" width="1120" height="380"/>
         <image name="sensorGlow" width="453.5" height="169"/>
         <image name="signal1" width="45" height="38"/>

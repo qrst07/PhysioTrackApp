@@ -54,14 +54,16 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var progressCountLabel: UILabel!
     
     @IBOutlet weak var instructionButton: UIButton!
-    
     @IBAction func showInstructions(_ sender: Any) {
         let instructionPopup = InstructionPopup()
         instructionPopup.appear(sender: self)
     }
     
     @IBOutlet weak var progressView: UIProgressView!
-
+    
+    @IBOutlet weak var nextExerciseButton: UIButton!
+    @IBOutlet weak var notesButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
     
     //var exerciseThreshold: ClosedRange<Double>!
     //let pickerViews = [
@@ -80,7 +82,7 @@ class SessionViewController: UIViewController {
     var incorrectRepCount = 0;
     var totalReps = 5;
     var totalSets = 3;
-    var setCount = 0 {
+    var setCount = 1 {
         didSet {
             setCountUpdated()
         }
@@ -94,6 +96,8 @@ class SessionViewController: UIViewController {
     var streamStart: Date?
     var batteryCheckTime = Date()
     
+    var exerciseComplete = false
+    
     //var coachMarksController: CoachMarksController?
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -102,32 +106,20 @@ class SessionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //hide items
+        feedbackLabel.isHidden = true
+        nextExerciseButton.isHidden = true
+        notesButton.isHidden = true
 
         // Do any additional setup after loading the view.
         skeletonView.setupScene()
         progressView.progress = 0.0
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
-//        dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
-        
-//        repSlider.maximumValue = Float(repGoal)
-//        currentRepSlider.maximumValue = 1.0
-//        currentRepSlider.setValue(0, animated: false)
-        
-        // Prepare the model for this config
-//        nameLabel.text = patient.fullName
-//        sessionLabel.text = "Session \(String(sessionNumber))"
+
         skeletonView.setupConfig(config: streamProcessor.joint)
         
-        //if let exercise = exercise {
-        //    loadExerciseMode(exercise)
-        //} else {
-            loadFreeformMode()
-        //}
-        
-        //SHOW MODES
-//        loadExerciseMode()
-        
-//        endSessionButton.isEnabled = false
+        loadFreeformMode()
         
 //        upperSensorColorView.backgroundColor = streamProcessor.joint.upper.sensorColor.color
 //        lowerSensorColorView.backgroundColor = streamProcessor.joint.lower.sensorColor.color
@@ -157,16 +149,13 @@ class SessionViewController: UIViewController {
         super.viewWillDisappear(animated)
         //coachMarksController?.stop(immediately: true)
     }
-    
-    var defaultFeedback = "Let's get started!"
-    
+        
     func loadFreeformMode() {
         //completeExerciseGameView.isHidden = true
         completeGraphView.isHidden = true
         exerciseInfoView.isHidden = false
-        
-        feedbackLabel.text = defaultFeedback
-        
+    
+                
         setCountLabel.text = "Set \(String(setCount)) of \(String(totalSets))"
         
         repCountLabel.text = "\(String(repCount)) of \(String(totalReps)) reps completed"
@@ -236,9 +225,11 @@ class SessionViewController: UIViewController {
         //repLabel.text = "\(repCount)/\(repGoal)"
         repCountLabel.text = "\(String(repCount)) of \(String(totalReps)) reps completed"
         
+        
+        // PROGRESS BAR
         let progressCount = Float(1)/Float(totalReps)
                 
-        progressView.progress += Float(progressCount)
+        progressView.progress = Float(repCount)*progressCount
         progressView.setProgress(progressView.progress, animated: true)
     }
     
@@ -256,10 +247,14 @@ class SessionViewController: UIViewController {
 //    }
     
     @IBAction func discardPressed(_ sender: UIBarButtonItem) {
-        streamProcessor.stopStream()
-        let alert = UIAlertController(title: "Confirm Discard", message: "Are you sure you want to discard this session?  This action cannot be undone.", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Discard", style: .destructive, handler: { _ in
+//        streamProcessor.stopStream()
+        let alert = UIAlertController(title: "Confirm Exit", message: "Are you sure you want to exit this session?  This action cannot be undone.", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Exit without saving", style: .destructive, handler: { _ in
             StreamProcessor.remove(patient: self.patient)
+            self.navigationController?.popViewController(animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Save and Exit", style: .destructive, handler: { _ in
+            self.endSession()
             self.navigationController?.popViewController(animated: true)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -321,7 +316,11 @@ class SessionViewController: UIViewController {
     }
     
     @IBAction func endSessionPressed(_ sender: Any) {
-       endSession()
+        if exerciseComplete {
+            // done, exit
+            endSession()
+        }
+        //TODO: ask same discard questions if not done
     }
     
     //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -519,8 +518,20 @@ extension SessionViewController: StreamProcessorDelegate {
         }
     }
     
+    func displayEndExercise() {
+        progressView.isHidden = true
+        pauseButton.isHidden = true
+        instructionButton.isHidden = true
+        nextExerciseButton.isHidden = false
+        notesButton.isHidden = false
+        //endsession to simply save and exit
+//        endSession()
+        //TODO: test this!!
+    }
+    
     func processExercise(exercise: ExerciseConfig, currentValue: Double) {
-        
+        //increment reps
+        // TODO: starting at 1? why
         let didCross = checkingTop ?
         currentValue > exercise.exerciseThreshold.upperBound :
         currentValue < exercise.exerciseThreshold.lowerBound
@@ -531,47 +542,45 @@ extension SessionViewController: StreamProcessorDelegate {
             checkingTop = !checkingTop
         }
         
+        //increment sets
         if repCount == totalReps {
-            endSession()
+            setCount += 1
+            repCount = 0
+            feedbackLabel.text = "Onto the next set!"
+            self.feedbackLabel.isHidden = false
+               DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                   self.feedbackLabel.isHidden = true
+               }
+            
+            //end session
+            if (setCount > totalSets){
+                displayEndExercise()
+            }
+        }
+        
+        if (setCount == totalSets) && (repCount == totalReps-2) {
+            feedbackLabel.text = "Almost done!"
+            self.feedbackLabel.isHidden = false
+               DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                   self.feedbackLabel.isHidden = true
+               }
         }
         
         if (currentValue > exercise.exerciseThreshold.upperBound) {
-            feedbackLabel.text = "Don't shrug your shoulders!"
-        } else {
-            feedbackLabel.text = "Keep going!"
+            feedbackLabel.text = "Lower your arm!"
+            self.feedbackLabel.isHidden = false
+               DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                   self.feedbackLabel.isHidden = true
+               }
         }
-
-        // add progress bar
         
-//        let goal = checkingTop ? exerciseThreshold.upperBound : exerciseThreshold.lowerBound
-//        let distanceToGoal = checkingTop ?
-//            exerciseThreshold.upperBound - currentValue :
-//            currentValue - exerciseThreshold.lowerBound
-//
-//        let width =  exerciseThreshold.upperBound - exerciseThreshold.lowerBound
-//        let pastHalf = checkingTop != exercise.repAtTop
-//        let percent = (((width - min(distanceToGoal, width)) / width) / 2) + (pastHalf ? 0.5 : 0)
-//
-//        let barWidth = exercise.barRange.upperBound - exercise.barRange.lowerBound
-//        //let ptsPerDelta = Double(overallSliderWidth.constant) / barWidth
-//        let barCenter = (exercise.barRange.upperBound + exercise.barRange.lowerBound) / 2
-//        let leftOfCenter = currentValue < barCenter
-//        if leftOfCenter {
-//            //rightSliderSpacing.constant = CGFloat((barWidth / 2) * ptsPerDelta)
-//            let leftSpacing = max(currentValue - exercise.barRange.lowerBound, exercise.barRange.lowerBound)
-//            //leftSliderSpacing.constant = CGFloat(leftSpacing * ptsPerDelta)
-//        } else {
-//            //leftSliderSpacing.constant = CGFloat((barWidth / 2) * ptsPerDelta)
-//            let rightSpacing = min(exercise.barRange.upperBound - currentValue, exercise.barRange.upperBound)
-//            //rightSliderSpacing.constant = CGFloat(rightSpacing * ptsPerDelta)
-//        }
-//        //goalSpacing.constant =  CGFloat((goal - exercise.barRange.lowerBound) * ptsPerDelta)
-//
-//        //currentRepSlider.setValue(Float(percent), animated: false)
-//        //currentRepLabel.text = "\(Int(percent * 100))%"
-//        //currentRomLabel.text = "\(Int(currentValue))°"
-        
-//        view.layoutIfNeeded()
+        if (currentValue > exercise.exerciseThreshold.upperBound+10) {
+            feedbackLabel.text = "Don't shrug your shoulders!"
+            self.feedbackLabel.isHidden = false
+               DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                   self.feedbackLabel.isHidden = true
+               }
+        }
     }
     
     func processMeasurment(data: MeasurementData, sample: Double, updateTimeUI: Bool, streamStart: Date) {
