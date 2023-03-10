@@ -1,7 +1,7 @@
-#PhysioTrack
+# PhysioTrack
 Capstone Project by: Anusha Dey, Sweta Ramamani, Elodie Xie, Emma Rehders
 
-##Based on the MetaROM App source code for iOS/macOS/tvOS/watchOS by MBIENTLAB
+## Based on the MetaROM App source code for iOS/macOS/tvOS/watchOS by MBIENTLAB
 (https://github.com/mbientlab/MetaWear-iOS-MetaROM-App)
 
 To build:
