@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InstructionPopup" customModule="MetaRom" customModuleProvider="target">
+            <connections>
+                <outlet property="backView" destination="y3d-DX-nAl" id="igb-Ah-VYy"/>
+                <outlet property="contentView" destination="inh-cd-iDO" id="zwC-zI-yrd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y3d-DX-nAl" userLabel="backView">
+                    <rect key="frame" x="0.0" y="0.0" width="432" height="914"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inh-cd-iDO" userLabel="contentView">
+                    <rect key="frame" x="76" y="150" width="241" height="530"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testing 123" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3w-CV-IC1">
+                            <rect key="frame" x="70.5" y="50" width="100" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZX-mq-Qpe">
+                            <rect key="frame" x="87" y="465" width="67" height="35"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                            <connections>
+                                <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="WN9-zU-nYm"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="IZX-mq-Qpe" secondAttribute="bottom" constant="30" id="BYB-jW-OLT"/>
+                        <constraint firstItem="IZX-mq-Qpe" firstAttribute="centerX" secondItem="inh-cd-iDO" secondAttribute="centerX" id="By2-kI-AR7"/>
+                        <constraint firstItem="A3w-CV-IC1" firstAttribute="leading" secondItem="inh-cd-iDO" secondAttribute="leading" constant="70.666666666666657" id="Dfk-wV-tNR"/>
+                        <constraint firstAttribute="width" constant="241" id="Qb4-Hd-J4f"/>
+                        <constraint firstAttribute="height" constant="530" id="QhJ-v3-sSt"/>
+                        <constraint firstItem="A3w-CV-IC1" firstAttribute="centerX" secondItem="inh-cd-iDO" secondAttribute="centerX" id="TH4-qX-8RI"/>
+                        <constraint firstItem="A3w-CV-IC1" firstAttribute="top" secondItem="inh-cd-iDO" secondAttribute="top" constant="50" id="t58-DY-lqx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="TheraGray"/>
+            <constraints>
+                <constraint firstItem="inh-cd-iDO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WvO-Ld-VjU"/>
+                <constraint firstItem="inh-cd-iDO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="102" id="ZMn-8e-okX"/>
+                <constraint firstItem="inh-cd-iDO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bdE-Ml-17K"/>
+                <constraint firstItem="inh-cd-iDO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="cDs-i8-038"/>
+                <constraint firstItem="inh-cd-iDO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="76" id="wxa-zK-sc9"/>
+                <constraint firstItem="inh-cd-iDO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xam-B4-7eH"/>
+            </constraints>
+            <point key="canvasLocation" x="26.086956521739133" y="19.419642857142858"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TheraGray">
+            <color red="0.42745098039215684" green="0.53725490196078429" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
