@@ -11,9 +11,8 @@ import UIKit
 class InstructionPopup: UIViewController {
 
     @IBOutlet weak var backView: UIView!
-    
     @IBOutlet weak var contentView: UIView!
-
+    @IBOutlet weak var instructionText: UILabel!
     
     @IBAction func doneAction(_ sender: UIButton) {
         hide()
@@ -40,8 +39,16 @@ class InstructionPopup: UIViewController {
         self.view.backgroundColor = .clear
         self.backView.backgroundColor = .black.withAlphaComponent(0.6)
         self.backView.alpha = 0
+        self.contentView.backgroundColor = .white
         self.contentView.alpha = 0
-        self.contentView.layer.cornerRadius = 10
+        self.contentView.layer.cornerRadius = 20
+        self.contentView.layer.shadowRadius = 4
+        self.contentView.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 0.25)
+        
+        instructionText.textColor = .black
+        instructionText.contentMode = .scaleToFill
+        instructionText.numberOfLines = 0
+        instructionText.text = "Stand with your arm to your side and your palm facing your body. \n Slowly raise your arm to a 90 degree angle. Be sure not to raise your shoulders. \n Hold your arm at 90 degrees for 1 second. \n Lower your arm back to your side."
     }
     
     func appear(sender: UIViewController) {
@@ -78,5 +85,4 @@ class InstructionPopup: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
