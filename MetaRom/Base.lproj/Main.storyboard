@@ -776,7 +776,7 @@
             </objects>
             <point key="canvasLocation" x="4004" y="1576"/>
         </scene>
-        <!--ROM-->
+        <!--Session View Controller-->
         <scene sceneID="tok-U7-00S">
             <objects>
                 <viewController id="hS7-Wt-yMF" customClass="SessionViewController" customModule="MetaRom" customModuleProvider="target" sceneMemberID="viewController">
@@ -965,8 +965,38 @@
                                         <rect key="frame" x="8" y="99" width="392" height="4"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </progressView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXi-as-guy">
+                                        <rect key="frame" x="372" y="168" width="28" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="i"/>
+                                        <connections>
+                                            <action selector="showInstructions:" destination="hS7-Wt-yMF" eventType="touchUpInside" id="t3y-yq-MX8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMk-ob-y1F">
+                                        <rect key="frame" x="138" y="168" width="128" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Next Exercise"/>
+                                        <connections>
+                                            <action selector="endSessionPressed:" destination="hS7-Wt-yMF" eventType="touchUpInside" id="Dp8-Im-AIP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paz-pl-q8B">
+                                        <rect key="frame" x="266" y="117" width="70" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Notes"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbx-9p-l8M">
+                                        <rect key="frame" x="188" y="117" width="33" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="II"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-Fg-seF">
-                                        <rect key="frame" x="162" y="181" width="85" height="30"/>
+                                        <rect key="frame" x="44" y="117" width="85" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.81960784313725488" green="0.15294117647058825" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -981,33 +1011,6 @@
                                             <action selector="endSessionPressed:" destination="hS7-Wt-yMF" eventType="touchUpInside" id="jBo-v7-ncu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXi-as-guy">
-                                        <rect key="frame" x="372" y="168" width="28" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="i"/>
-                                        <connections>
-                                            <action selector="showInstructions:" destination="hS7-Wt-yMF" eventType="touchUpInside" id="t3y-yq-MX8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMk-ob-y1F">
-                                        <rect key="frame" x="36" y="117" width="128" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Next Exercise"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paz-pl-q8B">
-                                        <rect key="frame" x="266" y="117" width="70" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Notes"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbx-9p-l8M">
-                                        <rect key="frame" x="188" y="117" width="33" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="II"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254908080000002" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
@@ -1018,20 +1021,21 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfR-Co-i4o">
+                                <rect key="frame" x="364" y="119" width="33" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="x"/>
+                                <connections>
+                                    <action selector="closePressed:" destination="hS7-Wt-yMF" eventType="touchUpInside" id="MIw-Vp-ed5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4w5-G6-LK5"/>
                         <color key="backgroundColor" red="0.1019607843" green="0.1215686275" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ROM" id="PnT-2w-d87">
-                        <barButtonItem key="backBarButtonItem" title=" " id="vLK-1e-kjT"/>
-                        <barButtonItem key="leftBarButtonItem" title="Discard" id="PPL-Cx-9HC">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="discardPressed:" destination="hS7-Wt-yMF" id="spp-8q-frs"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
+                        <outlet property="closeButton" destination="tfR-Co-i4o" id="7MH-KA-ehI"/>
                         <outlet property="completeGraphView" destination="JR0-8G-lIh" id="o3q-ls-6uS"/>
                         <outlet property="elapsedLabel" destination="gQd-YR-Cyz" id="yW6-dE-AS5"/>
                         <outlet property="endSessionButton" destination="NJ9-Fg-seF" id="XXs-HN-Zqi"/>
@@ -1048,6 +1052,7 @@
                         <outlet property="pauseButton" destination="lbx-9p-l8M" id="y3A-nA-tAb"/>
                         <outlet property="progressView" destination="fcc-rq-YoJ" id="1yt-wi-EJ3"/>
                         <outlet property="repCountLabel" destination="chH-Mo-t9W" id="YtH-Ts-Hm1"/>
+                        <outlet property="sessionData" destination="uhe-j5-lID" id="Jbu-R1-iNg"/>
                         <outlet property="setCountLabel" destination="T2f-Zy-LrZ" id="3QR-eD-2aa"/>
                         <outlet property="skeletonView" destination="vOz-gx-eVU" id="zUi-jg-keo"/>
                         <outlet property="upperSensorActivity" destination="eZe-GA-pJa" id="Odc-SY-X96"/>
@@ -1065,42 +1070,6 @@
                 <exit id="N8l-dr-umu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2917.3913043478265" y="850.44642857142856"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="UDu-IY-K1W">
-            <objects>
-                <viewController id="MAC-04-948" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RMH-rL-Q9s">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-eW-aKa">
-                                <rect key="frame" x="94" y="241" width="240" height="500"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testing 123" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dyb-kD-jPd">
-                                        <rect key="frame" x="72" y="50" width="100" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vey-91-Kgv">
-                                        <rect key="frame" x="89" y="465" width="67" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Close"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="OPy-gd-mMw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M4r-oe-tdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5936" y="829"/>
         </scene>
         <!--Add Edit Patient View Controller-->
         <scene sceneID="JLE-Cl-IlB">
@@ -1900,35 +1869,6 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
             <point key="canvasLocation" x="4723" y="1576"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="0op-EG-ljT">
-            <objects>
-                <viewController id="YNP-ER-0TA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="smM-n6-wLb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="wfl-7L-VUw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ALg-EN-3Ar" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2749" y="-97"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="LhV-eT-qbQ">
-            <objects>
-                <viewController id="ynF-b7-vGn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gCU-1R-DRW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="63m-YQ-h0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3699" y="-119"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="TZ7-QQ-y6v">
             <objects>
                 <viewController id="kC4-1g-zxq" sceneMemberID="viewController"/>
@@ -1948,7 +1888,7 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ool-UX-ckw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3887" y="1016"/>
+            <point key="canvasLocation" x="3935" y="737"/>
         </scene>
     </scenes>
     <designables>

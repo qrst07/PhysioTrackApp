@@ -24,6 +24,7 @@ fileprivate let measurementAverageDepth = 5
 fileprivate let measurementSampleDelta = 0.1 // 10Hz
 
 class SessionViewController: UIViewController {
+    @IBOutlet weak var sessionData: UIView!
 //    @IBOutlet weak var instructionButton: UIBarButtonItem!
     @IBOutlet weak var startSessionButton: UIButton!
     @IBOutlet weak var endSessionButton: UIButton!
@@ -65,6 +66,7 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var notesButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
     
+    @IBOutlet weak var closeButton: UIButton!
     //var exerciseThreshold: ClosedRange<Double>!
     //let pickerViews = [
     //    UIPickerView(),
@@ -107,10 +109,16 @@ class SessionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.hidesBackButton = true
+        
         //hide items
         feedbackLabel.isHidden = true
+        sessionData.isHidden = true
+        
+        //items to appear when exercise is done
         nextExerciseButton.isHidden = true
         notesButton.isHidden = true
+        endSessionButton.isHidden = true
 
         // Do any additional setup after loading the view.
         skeletonView.setupScene()
@@ -246,8 +254,8 @@ class SessionViewController: UIViewController {
 //        startSessionButton.isEnabled = allConnected
 //    }
     
-    @IBAction func discardPressed(_ sender: UIBarButtonItem) {
-//        streamProcessor.stopStream()
+    
+    @IBAction func closePressed(_ sender: Any) {
         let alert = UIAlertController(title: "Confirm Exit", message: "Are you sure you want to exit this session?  This action cannot be undone.", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Exit without saving", style: .destructive, handler: { _ in
             StreamProcessor.remove(patient: self.patient)
@@ -259,9 +267,6 @@ class SessionViewController: UIViewController {
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
-        if let popoverController = alert.popoverPresentationController {
-            popoverController.barButtonItem = sender
-        }
         present(alert, animated: true)
     }
     
@@ -294,16 +299,6 @@ class SessionViewController: UIViewController {
         }
         streamProcessor.stopStream()
         do {
-            //if let exercise = exercise {
-            //    try Session.saveNew(patient: patient,
-            //                        measurements: measurementMap.map { $0.value },
-            //                        side: streamProcessor.joint.side,
-            //                        joint: streamProcessor.joint.joint,
-            //                        exerciseName: exercise.name,
-            //                        exerciseThreshold: exerciseThreshold,
-            //                        reps: repCount,
-            //                        repAtTop: exercise.repAtTop)
-            //} else {
                 try Session.saveNew(patient: patient,
                                     measurements: measurementMap.map { $0.value },
                                     side: streamProcessor.joint.side,
@@ -315,12 +310,9 @@ class SessionViewController: UIViewController {
         performSegue(withIdentifier: "backToPatient", sender: nil)
     }
     
+    // for now, next exercise ends session as well
     @IBAction func endSessionPressed(_ sender: Any) {
-        if exerciseComplete {
-            // done, exit
             endSession()
-        }
-        //TODO: ask same discard questions if not done
     }
     
     //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -521,12 +513,11 @@ extension SessionViewController: StreamProcessorDelegate {
     func displayEndExercise() {
         progressView.isHidden = true
         pauseButton.isHidden = true
+        closeButton.isHidden = true
         instructionButton.isHidden = true
         nextExerciseButton.isHidden = false
         notesButton.isHidden = false
-        //endsession to simply save and exit
-//        endSession()
-        //TODO: test this!!
+        endSessionButton.isHidden = false
     }
     
     func processExercise(exercise: ExerciseConfig, currentValue: Double) {
@@ -554,6 +545,9 @@ extension SessionViewController: StreamProcessorDelegate {
             
             //end session
             if (setCount > totalSets){
+                setCountLabel.text = "Set \(String(totalSets)) of \(String(totalSets))"
+                
+                repCountLabel.text = "\(String(totalReps)) of \(String(totalReps)) reps completed"
                 displayEndExercise()
             }
         }
