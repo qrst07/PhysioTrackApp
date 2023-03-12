@@ -5,7 +5,7 @@
 //  Created by Stephen Schiffli on 5/24/18.
 //  Copyright © 2018 MBIENTLAB, INC. All rights reserved.
 //
-
+import SwiftUI
 import UIKit
 import SceneKit
 import Charts
@@ -24,6 +24,8 @@ fileprivate let measurementAverageDepth = 5
 fileprivate let measurementSampleDelta = 0.1 // 10Hz
 
 class SessionViewController: UIViewController {
+    
+    @IBOutlet weak var sessionContainer: UIView!
     @IBOutlet weak var sessionData: UIView!
 //    @IBOutlet weak var instructionButton: UIBarButtonItem!
     @IBOutlet weak var startSessionButton: UIButton!
@@ -48,11 +50,11 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var lineChart: LineChartView!
     
     @IBOutlet weak var exerciseInfoView: UIView!
+    
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var setCountLabel: UILabel!
     @IBOutlet weak var repCountLabel: UILabel!
-    @IBOutlet weak var accuracyCountLabel: UILabel!
-    @IBOutlet weak var progressCountLabel: UILabel!
+    @IBOutlet weak var accuracyLabel: UILabel!
     
     @IBOutlet weak var instructionButton: UIButton!
     @IBAction func showInstructions(_ sender: Any) {
@@ -90,6 +92,7 @@ class SessionViewController: UIViewController {
         }
     }
     var checkingTop = false
+    var incorrectRep = false
 
     var measurementMap: [Measurement: MeasurementData] = [:]
     var overXSeconds = false
@@ -113,6 +116,7 @@ class SessionViewController: UIViewController {
         
         //hide items
         feedbackLabel.isHidden = true
+        feedbackLabelView()
         sessionData.isHidden = true
         
         //items to appear when exercise is done
@@ -136,6 +140,12 @@ class SessionViewController: UIViewController {
         streamProcessor.startStream()
 //        updateButtonStates()
         startSessionPressed()
+        
+        self.sessionContainer.layer.cornerRadius = 20
+        self.sessionContainer.layer.shadowRadius = 4
+        self.sessionContainer.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 0.25)
+        
+//        self.skeletonView.backgroundColor = .black
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -165,8 +175,8 @@ class SessionViewController: UIViewController {
     
                 
         setCountLabel.text = "Set \(String(setCount)) of \(String(totalSets))"
-        
         repCountLabel.text = "\(String(repCount)) of \(String(totalReps)) reps completed"
+        accuracyLabel.text = "100% accuracy"
         
         var colors = graphLineColors.makeIterator()
         var values = infoValues.makeIterator()
@@ -229,16 +239,22 @@ class SessionViewController: UIViewController {
     }*/
     
     func repCountUpdated() {
-        //repSlider.setValue(Float(repCount), animated: true)
-        //repLabel.text = "\(repCount)/\(repGoal)"
+        // FIX THIS, SHOULD BE TOTAL REPS
+        let completeReps = (Float(setCount - 1)*Float(totalReps)) + Float(repCount)
         repCountLabel.text = "\(String(repCount)) of \(String(totalReps)) reps completed"
         
         
-        // PROGRESS BAR
-        let progressCount = Float(1)/Float(totalReps)
+        // PROGRESS BAR - for full reps and sets
+        let progressCount = Float(1)/Float(totalReps*totalSets)
                 
-        progressView.progress = Float(repCount)*progressCount
+        progressView.progress = Float(completeReps*progressCount)
         progressView.setProgress(progressView.progress, animated: true)
+        
+        if completeReps != 0 {
+            let accuracyCount = ((completeReps - Float(incorrectRepCount))/completeReps)*100
+            // accuracy
+            accuracyLabel.text = "\(String(accuracyCount))% accuracy"
+        }
     }
     
     func setCountUpdated() {
@@ -273,6 +289,15 @@ class SessionViewController: UIViewController {
     func startSessionPressed() {
 //        startSessionButton.isEnabled = false
         endSessionButton.isEnabled = true
+        
+        feedbackLabel.backgroundColor = UIColor.mint
+        feedbackLabel.borderColor = UIColor.emerald
+        feedbackLabel.textColor = UIColor.emerald
+        feedbackLabel.text = " Let's get started! "
+        self.feedbackLabel.isHidden = false
+           DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+               self.feedbackLabel.isHidden = true
+           }
         
         lineChart.xAxis.axisMinimum = 0.0
         lineChart.xAxis.axisMaximum = maxSeconds
@@ -529,6 +554,11 @@ extension SessionViewController: StreamProcessorDelegate {
         if didCross {
             if checkingTop != exercise.repAtTop {
                 repCount += 1
+                
+                if (incorrectRep) {
+                    incorrectRepCount += 1
+                    incorrectRep = false
+                }
             }
             checkingTop = !checkingTop
         }
@@ -537,7 +567,10 @@ extension SessionViewController: StreamProcessorDelegate {
         if repCount == totalReps {
             setCount += 1
             repCount = 0
-            feedbackLabel.text = "Onto the next set!"
+            feedbackLabel.backgroundColor = UIColor.mint
+            feedbackLabel.borderColor = UIColor.emerald
+            feedbackLabel.textColor = UIColor.emerald
+            feedbackLabel.text = " Onto the next set! "
             self.feedbackLabel.isHidden = false
                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                    self.feedbackLabel.isHidden = true
@@ -553,7 +586,10 @@ extension SessionViewController: StreamProcessorDelegate {
         }
         
         if (setCount == totalSets) && (repCount == totalReps-2) {
-            feedbackLabel.text = "Almost done!"
+            feedbackLabel.text = " Almost done! "
+            feedbackLabel.backgroundColor = UIColor.mint
+            feedbackLabel.borderColor = UIColor.emerald
+            feedbackLabel.textColor = UIColor.emerald
             self.feedbackLabel.isHidden = false
                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                    self.feedbackLabel.isHidden = true
@@ -561,7 +597,10 @@ extension SessionViewController: StreamProcessorDelegate {
         }
         
         if (currentValue > exercise.exerciseThreshold.upperBound) {
-            feedbackLabel.text = "Lower your arm!"
+            feedbackLabel.backgroundColor = UIColor.lightOrange
+            feedbackLabel.borderColor = UIColor.darkOrange
+            feedbackLabel.textColor = UIColor.darkOrange
+            feedbackLabel.text = " Lower your arm! "
             self.feedbackLabel.isHidden = false
                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                    self.feedbackLabel.isHidden = true
@@ -569,7 +608,11 @@ extension SessionViewController: StreamProcessorDelegate {
         }
         
         if (currentValue > exercise.exerciseThreshold.upperBound+10) {
-            feedbackLabel.text = "Don't shrug your shoulders!"
+            incorrectRep = true
+            feedbackLabel.text = " Don't shrug your shoulders! "
+            feedbackLabel.backgroundColor = UIColor.lightOrange
+            feedbackLabel.borderColor = UIColor.darkOrange
+            feedbackLabel.textColor = UIColor.darkOrange
             self.feedbackLabel.isHidden = false
                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                    self.feedbackLabel.isHidden = true
@@ -618,6 +661,16 @@ extension SessionViewController: StreamProcessorDelegate {
         }
     }
     
+    func feedbackLabelView() {
+        feedbackLabel.backgroundColor = UIColor.mint
+        feedbackLabel.borderColor = UIColor.emerald
+        feedbackLabel.textColor = UIColor.emerald
+        feedbackLabel.layer.borderWidth = 2
+        feedbackLabel.layer.cornerRadius = 8.0
+        feedbackLabel.layer.masksToBounds = true
+        feedbackLabel.numberOfLines = 1
+        feedbackLabel.minimumScaleFactor = 0.5
+    }
 
 }
 

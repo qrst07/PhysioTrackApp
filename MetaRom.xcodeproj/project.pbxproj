@@ -54,6 +54,7 @@
 		40F72BD721112D07003C2E7F /* ExerciseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F72BD621112D07003C2E7F /* ExerciseConfig.swift */; };
 		40F72BD92111F449003C2E7F /* SessionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F72BD82111F449003C2E7F /* SessionCollectionViewCell.swift */; };
 		5F432A7D4070A7D40445AE6D /* Pods_MetaRom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F0DC180BD880411C0240A5 /* Pods_MetaRom.framework */; };
+		7C14B10C29BD539F00E56F93 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B10B29BD539F00E56F93 /* Colors.swift */; };
 		7CE9093F29BAFA0700E0BD80 /* InstructionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9093D29BAFA0700E0BD80 /* InstructionPopup.swift */; };
 		7CE9094029BAFA0700E0BD80 /* InstructionPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE9093E29BAFA0700E0BD80 /* InstructionPopup.xib */; };
 		AB82EEE725C0A48300ECE5F2 /* BlueSensorSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82EEE625C0A48300ECE5F2 /* BlueSensorSessionViewController.swift */; };
@@ -134,6 +135,7 @@
 		557B597E7CD0FCF8752B7794 /* Pods-Theragoni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Theragoni.release.xcconfig"; path = "Pods/Target Support Files/Pods-Theragoni/Pods-Theragoni.release.xcconfig"; sourceTree = "<group>"; };
 		599625C35694F30C54D2F824 /* Pods-MetaRomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaRomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetaRomTests/Pods-MetaRomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		742438D1FDD5356878BCC2A7 /* Pods-TheragoniTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheragoniTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheragoniTests/Pods-TheragoniTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C14B10B29BD539F00E56F93 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7CE9093D29BAFA0700E0BD80 /* InstructionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionPopup.swift; sourceTree = "<group>"; };
 		7CE9093E29BAFA0700E0BD80 /* InstructionPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionPopup.xib; sourceTree = "<group>"; };
 		90F0AC8E45439B067E47DD3A /* Pods-Theragoni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Theragoni.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Theragoni/Pods-Theragoni.debug.xcconfig"; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 		409D75EE2091670500E7B605 /* MetaRom */ = {
 			isa = PBXGroup;
 			children = (
+				7C14B10A29BD538E00E56F93 /* Styles */,
 				4048F27320E187E900AAB954 /* Processing */,
 				406E23F320B77F6A006327D4 /* Model */,
 				40D523CD20B73C1F007628B2 /* View */,
@@ -334,6 +337,14 @@
 				40220A9922D688EB00C88A06 /* GaugeView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		7C14B10A29BD538E00E56F93 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				7C14B10B29BD539F00E56F93 /* Colors.swift */,
+			);
+			name = Styles;
 			sourceTree = "<group>";
 		};
 		7CE9093C29BAF9C900E0BD80 /* InstructionPopup */ = {
@@ -575,6 +586,7 @@
 				4041AC3D20C899B80032327C /* Session.swift in Sources */,
 				403AF2E321F1195200BF852C /* DeleteOp.swift in Sources */,
 				407B643520BF386C00189986 /* SessionHistoryCollectionReusableView.swift in Sources */,
+				7C14B10C29BD539F00E56F93 /* Colors.swift in Sources */,
 				40220AA322D6B55B00C88A06 /* GaugeView.swift in Sources */,
 				409D75F02091670500E7B605 /* AppDelegate.swift in Sources */,
 				40563D012193787200F0DC70 /* SessionSetupViewController.swift in Sources */,
