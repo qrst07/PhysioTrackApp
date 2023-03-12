@@ -21,12 +21,13 @@ class SessionSetupViewController: UIViewController {
         return result
     }()
 
-    var patient: Patient!
-    var sessionNumber: Int!
+    //TODO SUNDAY: patient passed to configure here
+//    var patient: Patient!
+//    var sessionNumber: Int!
     var streamProcessor: StreamProcessor!
     var exercise: ExerciseConfig?
     var calibrateOnTable: Bool = false
-    
+        
     var pages: [(UIViewController, String)]!
     var pageController: UIPageViewController!
     //var configureController: ConfigureSessionViewController!
@@ -53,8 +54,8 @@ class SessionSetupViewController: UIViewController {
         //greenSensorController.delegate = self
         
         let configureController = (storyboard!.instantiateViewController(withIdentifier: "configureSession") as! ConfigureSessionViewController)
-        configureController.patient = patient
-        configureController.sessionNumber = sessionNumber
+//        configureController.patient = patient
+//        configureController.sessionNumber = sessionNumber
         configureController.delegate = self
         
         let placementController = (storyboard!.instantiateViewController(withIdentifier: "placementAndCalibrate") as! PlacementCalibrateViewController)
@@ -145,8 +146,8 @@ class SessionSetupViewController: UIViewController {
         } else if let destination = segue.destination as? SessionViewController {
             destination.streamProcessor = streamProcessor
             //destination.exercise = exercise
-            destination.patient = patient
-            destination.sessionNumber = sessionNumber
+//            destination.patient = patient
+//            destination.sessionNumber = sessionNumber
         }
     }
 }

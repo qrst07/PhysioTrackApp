@@ -37,7 +37,6 @@ class PausePopup: UIViewController {
     
     //not sure how - maybe call parent function?
     @IBAction func quitExit(_ sender: Any) {
-//        StreamProcessor.remove(patient: self.patient)
     }
     
     @IBAction func viewInstructions(_ sender: Any) {

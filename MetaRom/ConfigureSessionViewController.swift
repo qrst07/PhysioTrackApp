@@ -28,8 +28,9 @@ class ConfigureSessionViewController: UIViewController {
     
     @IBOutlet weak var pageContainer: UIView!
     
-    var patient: Patient!
-    var sessionNumber: Int!
+    //TODO SUNDAY: patient passed here. needed for stream.
+//    var patient: Patient!
+//    var sessionNumber: Int!
     weak var delegate: ConfigureSessionDelegate?
     
 //    let jointPickerView = UIPickerView()
@@ -105,13 +106,13 @@ class ConfigureSessionViewController: UIViewController {
 //            jointPickerView.selectRow(idx, inComponent: 0, animated: false)
 //            pickerView(jointPickerView, didSelectRow: idx, inComponent: 0)
 //        }
-        if let lastSide = patient.lastSide.value {
-            sideSelector.selectedSegmentIndex = lastSide
-        }
-        if let lastCalibration = patient.lastCalibration.value {
-            calibrationSelector.selectedSegmentIndex = lastCalibration
-        }
-        
+//        if let lastSide = patient.lastSide.value {
+//            sideSelector.selectedSegmentIndex = lastSide
+//        }
+//        if let lastCalibration = patient.lastCalibration.value {
+//            calibrationSelector.selectedSegmentIndex = lastCalibration
+//        }
+//
         updateCurrentConfig()
         updateUIForSessionType()
         updateDetectedSensors()
@@ -258,8 +259,7 @@ class ConfigureSessionViewController: UIViewController {
 //            }
 //        }
         // Send back a fully configured StreamProcessor
-        let result = StreamProcessor.getOrCreate(patient: patient,
-                                                 upper: chosenDevices[0],
+        let result = StreamProcessor.getOrCreate(upper: chosenDevices[0],
                                                  lower: chosenDevices[1],
                                                  joint: currentJoint!)
         let calibrateOnTable = calibrationSelector.isEnabled ? calibrationSelector.selectedSegmentIndex == 1 : false
@@ -270,11 +270,11 @@ class ConfigureSessionViewController: UIViewController {
                             calibrateOnTable: calibrateOnTable)
     }
     
-    @IBAction func unwindToStartSessionViewController(segue: UIStoryboardSegue) {
-        if segue.source is PlacementCalibrateViewController {
-            StreamProcessor.remove(patient: patient)
-        }
-    }
+//    @IBAction func unwindToStartSessionViewController(segue: UIStoryboardSegue) {
+//        if segue.source is PlacementCalibrateViewController {
+//            StreamProcessor.remove(patient: patient)
+//        }
+//    }
 }
 
 extension MetaWear {

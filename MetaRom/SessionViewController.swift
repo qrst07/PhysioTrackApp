@@ -90,8 +90,8 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var notesLabel: UIView!
     @IBOutlet weak var notesButton: UIButton!
     
-    var patient: Patient!
-    var sessionNumber: Int!
+//    var patient: Patient!
+//    var sessionNumber: Int!
     var repCount = 0 {
         didSet {
             repCountUpdated()
@@ -328,7 +328,7 @@ class SessionViewController: UIViewController {
     @IBAction func closePressed(_ sender: Any) {
         let alert = UIAlertController(title: "Confirm Exit", message: "Are you sure you want to exit this session?  This action cannot be undone.", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Exit without saving", style: .destructive, handler: { _ in
-            StreamProcessor.remove(patient: self.patient)
+            self.endSession()
             self.navigationController?.popViewController(animated: true)
         }))
         alert.addAction(UIAlertAction(title: "Save and Exit", style: .default, handler: { _ in
@@ -377,15 +377,16 @@ class SessionViewController: UIViewController {
             return
         }
         streamProcessor.stopStream()
-        do {
-                try Session.saveNew(patient: patient,
-                                    measurements: measurementMap.map { $0.value },
-                                    side: streamProcessor.joint.side,
-                                    joint: streamProcessor.joint.joint)
-            //}
-        } catch {
-            self.showOkAlert(title: "Save Failed", message: "Please try again.\n\(error.localizedDescription)")
-        }
+        // no need to actually save
+//        do {
+//                try Session.saveNew(patient: patient,
+//                                    measurements: measurementMap.map { $0.value },
+//                                    side: streamProcessor.joint.side,
+//                                    joint: streamProcessor.joint.joint)
+//            //}
+//        } catch {
+//            self.showOkAlert(title: "Save Failed", message: "Please try again.\n\(error.localizedDescription)")
+//        }
         performSegue(withIdentifier: "backToPatient", sender: nil)
     }
     

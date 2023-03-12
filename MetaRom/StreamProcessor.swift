@@ -36,38 +36,38 @@ class StreamProcessor {
         return upperStream.device.isConnectedAndSetup && lowerStream.device.isConnectedAndSetup
     }
     
-    class func getOrCreate(patient: Patient, upper: MetaWear, lower: MetaWear, joint: JointConfig) -> (StreamProcessor, Bool) {
+    class func getOrCreate(upper: MetaWear, lower: MetaWear, joint: JointConfig) -> (StreamProcessor, Bool) {
         var created = false
-        var streamProcessor = StreamProcessor.cache[patient]
-        // See if the cached processor matches
-        if streamProcessor != nil {
-            let isSame = streamProcessor!.joint == joint &&
-                streamProcessor!.upperStream.device == upper &&
-                streamProcessor!.lowerStream.device == lower
-            if !isSame {
-                streamProcessor = nil
-            }
-        }
-        // Create a processor if needed
-        if streamProcessor == nil {
-            streamProcessor = StreamProcessor(
+//        var streamProcessor = StreamProcessor.cache[patient]
+//        // See if the cached processor matches
+//        if streamProcessor != nil {
+//            let isSame = streamProcessor!.joint == joint &&
+//                streamProcessor!.upperStream.device == upper &&
+//                streamProcessor!.lowerStream.device == lower
+//            if !isSame {
+//                streamProcessor = nil
+//            }
+//        }
+//        // Create a processor if needed
+//        if streamProcessor == nil {
+           var streamProcessor = StreamProcessor(
                 upperStream: QuaternionStream(upper),
                 lowerStream: QuaternionStream(lower),
                 joint: joint)
             created = true
-            StreamProcessor.cache[patient] = streamProcessor!
-        }
-        return (streamProcessor!, created)
+//            StreamProcessor.cache[patient] = streamProcessor!
+//        }
+        return (streamProcessor, created)
     }
     
     class func stopAll() {
         cache.forEach { $0.value.stopStream() }
     }
     
-    class func remove(patient: Patient) {
-        let processor = StreamProcessor.cache.removeValue(forKey: patient)
-        processor?.stopStream()
-    }
+//    class func remove(patient: Patient) {
+//        let processor = StreamProcessor.cache.removeValue(forKey: patient)
+//        processor?.stopStream()
+//    }
     
     private init(upperStream: QuaternionStream, lowerStream: QuaternionStream, joint: JointConfig) {
         self.upperStream = upperStream
