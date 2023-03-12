@@ -1,27 +1,52 @@
 //
-//  InstructionPopup.swift
+//  PausePopup.swift
 //  MetaRom
 //
-//  Created by A Dey on 2023-03-10.
+//  Created by A Dey on 2023-03-11.
 //  Copyright © 2023 MBIENTLAB, INC. All rights reserved.
 //
 
 import UIKit
 
-class InstructionPopup: UIViewController {
+class PausePopup: UIViewController {
 
+    
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var instructionText: UILabel!
+    @IBOutlet weak var resumeLabel: UIView!
+    @IBOutlet weak var resumeButton: UIButton!
+    @IBOutlet weak var finishLabel: UIView!
+    @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var quitLabel: UIView!
+    @IBOutlet weak var quitButton: UIButton!
+    @IBOutlet weak var instructionLabel: UIView!
+    @IBOutlet weak var instructionButton: UIButton!
     
-    @IBOutlet weak var titleLabel: UILabel!
+    var streamProcessor: StreamProcessor!
+    var patient: Patient!
     
     @IBAction func doneAction(_ sender: UIButton) {
         hide()
     }
     
+    
+    //not sure how
+    @IBAction func saveExit(_ sender: Any) {
+    }
+    
+    
+    //not sure how - maybe call parent function?
+    @IBAction func quitExit(_ sender: Any) {
+//        StreamProcessor.remove(patient: self.patient)
+    }
+    
+    @IBAction func viewInstructions(_ sender: Any) {
+        let instructionPopup = InstructionPopup()
+        instructionPopup.appear(sender: self)
+    }
+    
     init() {
-        super.init(nibName: "InstructionPopup", bundle: nil)
+        super.init(nibName: "PausePopup", bundle: nil)
         self.modalPresentationStyle = .overFullScreen
     }
     
@@ -39,7 +64,7 @@ class InstructionPopup: UIViewController {
     
     func configView() {
         self.view.backgroundColor = .clear
-        self.backView.backgroundColor = .clear
+        self.backView.backgroundColor = .salt.withAlphaComponent(0.65)
         self.contentView.backgroundColor = .white
         self.contentView.alpha = 0
         self.contentView.layer.cornerRadius = 20
@@ -51,18 +76,31 @@ class InstructionPopup: UIViewController {
                                         blur: 4,
                                         spread: 0)
         
-        instructionText.contentMode = .scaleToFill
-        instructionText.numberOfLines = 0
-        instructionText.textColor = UIColor.smoke
-        instructionText.font = UIFont.textStyle5
-        instructionText.textAlignment = .left
-        instructionText.text = "1. Stand with your arm to your side and your palm facing your body. \n\n2. Slowly raise your arm to a 90 degree angle. Be sure not to raise your shoulders. \n\n3. Hold your arm at 90 degrees for 1 second. \n\n4. Lower your arm back to your side."
-        
-        titleLabel.contentMode = .scaleToFill
-        titleLabel.numberOfLines = 0
-        titleLabel.textColor = UIColor.pebble
-        titleLabel.font = UIFont.textStyle
-        titleLabel.textAlignment = .center
+        resumeLabel.layer.cornerRadius = 20
+        resumeLabel.layer.masksToBounds =  true
+        resumeLabel.backgroundColor = UIColor.amethyst
+
+        finishLabel.layer.cornerRadius = 18
+        finishLabel.layer.masksToBounds =  true
+        finishLabel.layer.borderColor = UIColor.pebble.cgColor
+        finishLabel.layer.borderWidth =  2
+        finishLabel.backgroundColor = UIColor.daisy
+        finishButton.setTitleColor(UIColor.pebble, for: .normal)
+
+        quitLabel.layer.cornerRadius = 18
+        quitLabel.layer.masksToBounds =  true
+        quitLabel.layer.borderColor = UIColor.pebble.cgColor
+        quitLabel.layer.borderWidth =  2
+        quitLabel.backgroundColor = UIColor.daisy
+        quitButton.setTitleColor(UIColor.pebble, for: .normal)
+
+
+        instructionLabel.layer.cornerRadius = 18
+        instructionLabel.layer.masksToBounds =  true
+        instructionLabel.layer.borderColor = UIColor.pebble.cgColor
+        instructionLabel.layer.borderWidth =  2
+        instructionLabel.backgroundColor = UIColor.daisy
+        instructionButton.setTitleColor(UIColor.pebble, for: .normal)
     }
     
     func appear(sender: UIViewController) {
@@ -87,10 +125,9 @@ class InstructionPopup: UIViewController {
             self.removeFromParent()
         }
     }
-    
-    
+
+
     /*
-     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -99,4 +136,5 @@ class InstructionPopup: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }

@@ -52,4 +52,8 @@ extension UIColor {
     @nonobjc class var themeBlue: UIColor {
         return UIColor(red: 33.0 / 255.0, green: 104.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
     }
+    
+    @nonobjc class var slate: UIColor {
+        return UIColor(red: 130.0 / 255.0, green: 130.0 / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
+    }
 }

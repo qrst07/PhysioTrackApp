@@ -23,13 +23,19 @@ fileprivate let repGoal = 10
 fileprivate let measurementAverageDepth = 5
 fileprivate let measurementSampleDelta = 0.1 // 10Hz
 
+//protocol endSessionSavedDelegate {
+//    func endSession()
+//}
+
 class SessionViewController: UIViewController {
     
     @IBOutlet weak var sessionContainer: UIView!
     @IBOutlet weak var sessionData: UIView!
 //    @IBOutlet weak var instructionButton: UIBarButtonItem!
     @IBOutlet weak var startSessionButton: UIButton!
-    @IBOutlet weak var endSessionButton: UIButton!
+    
+    @IBOutlet weak var endSessionLabel: UIView!
+//    @IBOutlet weak var endSessionButton: UIButton!
     @IBOutlet weak var skeletonView: SkeletonView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sessionLabel: UILabel!
@@ -56,6 +62,9 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var repCountLabel: UILabel!
     @IBOutlet weak var accuracyLabel: UILabel!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
     @IBOutlet weak var instructionButton: UIButton!
     @IBAction func showInstructions(_ sender: Any) {
         let instructionPopup = InstructionPopup()
@@ -64,18 +73,23 @@ class SessionViewController: UIViewController {
     
     @IBOutlet weak var progressView: UIProgressView!
     
-    @IBOutlet weak var nextExerciseButton: UIButton!
-    @IBOutlet weak var notesButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
-    
+    @IBAction func showPausePopup(_ sender: Any) {
+        let pausePopup = PausePopup()
+        pausePopup.appear(sender: self)
+    }
     @IBOutlet weak var closeButton: UIButton!
-    //var exerciseThreshold: ClosedRange<Double>!
-    //let pickerViews = [
-    //    UIPickerView(),
-    //    UIPickerView()
-    //]
-    //var pickerValues: [[Double]] = [[], []]
 
+        
+    @IBOutlet weak var completeExerciseView: UIView!
+    //BUTTONS AT END
+    @IBOutlet weak var finishLabel: UIView!
+    @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var nextLabel: UIView!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var notesLabel: UIView!
+    @IBOutlet weak var notesButton: UIButton!
+    
     var patient: Patient!
     var sessionNumber: Int!
     var repCount = 0 {
@@ -118,13 +132,9 @@ class SessionViewController: UIViewController {
         feedbackLabel.isHidden = true
         feedbackLabelView()
         sessionData.isHidden = true
-        
-        //items to appear when exercise is done
-        nextExerciseButton.isHidden = true
-        notesButton.isHidden = true
-        endSessionButton.isHidden = true
+                
+        completeExerciseView.isHidden = true
 
-        // Do any additional setup after loading the view.
         skeletonView.setupScene()
         progressView.progress = 0.0
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
@@ -133,19 +143,24 @@ class SessionViewController: UIViewController {
         
         loadFreeformMode()
         
-//        upperSensorColorView.backgroundColor = streamProcessor.joint.upper.sensorColor.color
-//        lowerSensorColorView.backgroundColor = streamProcessor.joint.lower.sensorColor.color
-        
         streamProcessor.delegate = self
         streamProcessor.startStream()
-//        updateButtonStates()
         startSessionPressed()
         
         self.sessionContainer.layer.cornerRadius = 20
-        self.sessionContainer.layer.shadowRadius = 4
-        self.sessionContainer.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 0.25)
+        self.sessionContainer.layer.masksToBounds = true
+        self.sessionContainer.addShadow(color: UIColor(red:0, green: 0, blue: 0, alpha: 1),
+                                        alpha: 0.25,
+                                        x: 0,
+                                        y: 4,
+                                        blur: 4,
+                                        spread: 0)
         
-//        self.skeletonView.backgroundColor = .black
+        //ADD BACKGROUND COLOR TO SKELETON ?
+        
+        //FONTS
+        addInitStyling()
+        // 
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -258,7 +273,46 @@ class SessionViewController: UIViewController {
     }
     
     func setCountUpdated() {
-        setCountLabel.text = "\(String(setCount)) of \(String(totalSets)) sets completed"
+        setCountLabel.text = "Set \(String(setCount)) of \(String(totalSets))"
+    }
+    
+    func addInitStyling() {        
+        //font, color
+        setCountLabel.textColor = UIColor.smoke
+        setCountLabel.font = UIFont.textStyle2
+        setCountLabel.textAlignment = .center
+        repCountLabel.textColor = UIColor.smoke
+        repCountLabel.font = UIFont.textStyle2
+        repCountLabel.textAlignment = .center
+        accuracyLabel.textColor = UIColor.smoke
+        accuracyLabel.font = UIFont.textStyle2
+        accuracyLabel.textAlignment = .center
+        
+        titleLabel.textColor = UIColor.pebble
+        titleLabel.font = UIFont.textStyle
+        titleLabel.textAlignment = .center
+        
+        progressView.progressTintColor = UIColor.amethyst
+        progressView.trackTintColor = UIColor.salt
+        
+        //button styling
+        nextLabel.layer.cornerRadius = 20
+        nextLabel.layer.masksToBounds =  true
+        nextLabel.backgroundColor = UIColor.amethyst
+
+        finishLabel.layer.cornerRadius = 18
+        finishLabel.layer.masksToBounds =  true
+        finishLabel.layer.borderColor = UIColor.pebble.cgColor
+        finishLabel.layer.borderWidth =  2
+        finishLabel.backgroundColor = UIColor.daisy
+        finishButton.setTitleColor(UIColor.pebble, for: .normal)
+        
+        notesLabel.layer.cornerRadius = 18
+        notesLabel.layer.masksToBounds =  true
+        notesLabel.layer.borderColor = UIColor.pebble.cgColor
+        notesLabel.layer.borderWidth =  2
+        notesLabel.backgroundColor = UIColor.daisy
+        notesButton.setTitleColor(UIColor.pebble, for: .normal)
     }
     
 //    func updateButtonStates() {
@@ -288,7 +342,7 @@ class SessionViewController: UIViewController {
     
     func startSessionPressed() {
 //        startSessionButton.isEnabled = false
-        endSessionButton.isEnabled = true
+//        endSessionButton.isEnabled = true
         
         feedbackLabel.backgroundColor = UIColor.mint
         feedbackLabel.borderColor = UIColor.emerald
@@ -447,6 +501,27 @@ class SessionViewController: UIViewController {
     }
 }*/
 
+extension SessionViewController: EndSessionSavedDelegate {
+    
+    func testFinish() {
+        print("test")
+//        guard streamStart != nil else {
+//            return
+//        }
+//        streamProcessor.stopStream()
+//        do {
+//                try Session.saveNew(patient: patient,
+//                                    measurements: measurementMap.map { $0.value },
+//                                    side: streamProcessor.joint.side,
+//                                    joint: streamProcessor.joint.joint)
+//            //}
+//        } catch {
+//            self.showOkAlert(title: "Save Failed", message: "Please try again.\n\(error.localizedDescription)")
+//        }
+//        performSegue(withIdentifier: "backToPatient", sender: nil)
+    }
+}
+
 extension SessionViewController: StreamProcessorDelegate {
     func didFinish(isUpper: Bool, error: Error?) {
         if let error = error {
@@ -535,15 +610,15 @@ extension SessionViewController: StreamProcessorDelegate {
         }
     }
     
-    func displayEndExercise() {
-        progressView.isHidden = true
-        pauseButton.isHidden = true
-        closeButton.isHidden = true
-        instructionButton.isHidden = true
-        nextExerciseButton.isHidden = false
-        notesButton.isHidden = false
-        endSessionButton.isHidden = false
-    }
+//    func displayEndExercise() {
+//        progressView.isHidden = true
+//        pauseButton.isHidden = true
+//        closeButton.isHidden = true
+//        instructionButton.isHidden = true
+//        nextExerciseButton.isHidden = false
+//        notesButton.isHidden = false
+//        endSessionButton.isHidden = false
+//    }
     
     func processExercise(exercise: ExerciseConfig, currentValue: Double) {
         //increment reps
@@ -581,7 +656,8 @@ extension SessionViewController: StreamProcessorDelegate {
                 setCountLabel.text = "Set \(String(totalSets)) of \(String(totalSets))"
                 
                 repCountLabel.text = "\(String(totalReps)) of \(String(totalReps)) reps completed"
-                displayEndExercise()
+//                displayEndExercise()
+                completeExerciseView.isHidden = false
             }
         }
         

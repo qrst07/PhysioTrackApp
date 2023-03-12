@@ -54,7 +54,13 @@
 		40F72BD721112D07003C2E7F /* ExerciseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F72BD621112D07003C2E7F /* ExerciseConfig.swift */; };
 		40F72BD92111F449003C2E7F /* SessionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F72BD82111F449003C2E7F /* SessionCollectionViewCell.swift */; };
 		5F432A7D4070A7D40445AE6D /* Pods_MetaRom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F0DC180BD880411C0240A5 /* Pods_MetaRom.framework */; };
+		7C137F9029BD9E0300E9C696 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C137F8F29BD9E0300E9C696 /* Fonts.swift */; };
 		7C14B10C29BD539F00E56F93 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B10B29BD539F00E56F93 /* Colors.swift */; };
+		7C14B11129BD5FDF00E56F93 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B11029BD5FDF00E56F93 /* UIView.swift */; };
+		7C14B11329BD606000E56F93 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B11229BD606000E56F93 /* UIBezierPath.swift */; };
+		7C14B11A29BD646D00E56F93 /* PausePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B11829BD646D00E56F93 /* PausePopup.swift */; };
+		7C14B11B29BD646D00E56F93 /* PausePopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C14B11929BD646D00E56F93 /* PausePopup.xib */; };
+		7CC22A3229BDB12C00FDF93C /* CompletedExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */; };
 		7CE9093F29BAFA0700E0BD80 /* InstructionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9093D29BAFA0700E0BD80 /* InstructionPopup.swift */; };
 		7CE9094029BAFA0700E0BD80 /* InstructionPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE9093E29BAFA0700E0BD80 /* InstructionPopup.xib */; };
 		AB82EEE725C0A48300ECE5F2 /* BlueSensorSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82EEE625C0A48300ECE5F2 /* BlueSensorSessionViewController.swift */; };
@@ -135,7 +141,13 @@
 		557B597E7CD0FCF8752B7794 /* Pods-Theragoni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Theragoni.release.xcconfig"; path = "Pods/Target Support Files/Pods-Theragoni/Pods-Theragoni.release.xcconfig"; sourceTree = "<group>"; };
 		599625C35694F30C54D2F824 /* Pods-MetaRomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaRomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetaRomTests/Pods-MetaRomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		742438D1FDD5356878BCC2A7 /* Pods-TheragoniTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheragoniTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheragoniTests/Pods-TheragoniTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C137F8F29BD9E0300E9C696 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7C14B10B29BD539F00E56F93 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7C14B11029BD5FDF00E56F93 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		7C14B11229BD606000E56F93 /* UIBezierPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
+		7C14B11829BD646D00E56F93 /* PausePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePopup.swift; sourceTree = "<group>"; };
+		7C14B11929BD646D00E56F93 /* PausePopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PausePopup.xib; sourceTree = "<group>"; };
+		7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedExerciseViewController.swift; sourceTree = "<group>"; };
 		7CE9093D29BAFA0700E0BD80 /* InstructionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionPopup.swift; sourceTree = "<group>"; };
 		7CE9093E29BAFA0700E0BD80 /* InstructionPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionPopup.xib; sourceTree = "<group>"; };
 		90F0AC8E45439B067E47DD3A /* Pods-Theragoni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Theragoni.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Theragoni/Pods-Theragoni.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +286,7 @@
 		409D75EE2091670500E7B605 /* MetaRom */ = {
 			isa = PBXGroup;
 			children = (
+				7C14B10D29BD5F8A00E56F93 /* Extensions */,
 				7C14B10A29BD538E00E56F93 /* Styles */,
 				4048F27320E187E900AAB954 /* Processing */,
 				406E23F320B77F6A006327D4 /* Model */,
@@ -306,6 +319,7 @@
 		40D523CB20B73BF8007628B2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7C14B11C29BD647F00E56F93 /* PausePopup */,
 				7CE9093C29BAF9C900E0BD80 /* InstructionPopup */,
 				40D5241520B779DD007628B2 /* PatientTableViewController.swift */,
 				406E23F820B79413006327D4 /* PatientViewController.swift */,
@@ -318,6 +332,7 @@
 				400B2DBB20C1FDC3009DF923 /* AddEditPatientViewController.swift */,
 				4041AC3A20C8705A0032327C /* SingleSessionViewController.swift */,
 				40EBB700215550EB00787A5C /* LightStatusBarNavigationController.swift */,
+				7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -343,8 +358,27 @@
 			isa = PBXGroup;
 			children = (
 				7C14B10B29BD539F00E56F93 /* Colors.swift */,
+				7C137F8F29BD9E0300E9C696 /* Fonts.swift */,
 			);
 			name = Styles;
+			sourceTree = "<group>";
+		};
+		7C14B10D29BD5F8A00E56F93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C14B11029BD5FDF00E56F93 /* UIView.swift */,
+				7C14B11229BD606000E56F93 /* UIBezierPath.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		7C14B11C29BD647F00E56F93 /* PausePopup */ = {
+			isa = PBXGroup;
+			children = (
+				7C14B11829BD646D00E56F93 /* PausePopup.swift */,
+				7C14B11929BD646D00E56F93 /* PausePopup.xib */,
+			);
+			name = PausePopup;
 			sourceTree = "<group>";
 		};
 		7CE9093C29BAF9C900E0BD80 /* InstructionPopup */ = {
@@ -457,6 +491,7 @@
 				7CE9094029BAFA0700E0BD80 /* InstructionPopup.xib in Resources */,
 				403AF2EC21F15F8D00BF852C /* MeasurementDetailView.xib in Resources */,
 				409D75FA2091670700E7B605 /* LaunchScreen.storyboard in Resources */,
+				7C14B11B29BD646D00E56F93 /* PausePopup.xib in Resources */,
 				AB86912E25603B6B0035949E /* Colors.xcassets in Resources */,
 				409D75F52091670500E7B605 /* Main.storyboard in Resources */,
 				AB86913625605AC10035949E /* AppIcon.xcassets in Resources */,
@@ -561,8 +596,10 @@
 				40220A7822D50B1E00C88A06 /* RoutineConfig.swift in Sources */,
 				4075D6F0216D332B0019E69B /* PlacementCalibrateViewController.swift in Sources */,
 				40EBB701215550EB00787A5C /* LightStatusBarNavigationController.swift in Sources */,
+				7C14B11329BD606000E56F93 /* UIBezierPath.swift in Sources */,
 				4048F27D20E1927900AAB954 /* JointConfig.swift in Sources */,
 				7CE9093F29BAFA0700E0BD80 /* InstructionPopup.swift in Sources */,
+				7C14B11129BD5FDF00E56F93 /* UIView.swift in Sources */,
 				403AF2E921F15F7700BF852C /* MeasurementDetailView.swift in Sources */,
 				40F72BD721112D07003C2E7F /* ExerciseConfig.swift in Sources */,
 				4048F27920E18AA100AAB954 /* Conversion.swift in Sources */,
@@ -578,6 +615,7 @@
 				4057D0C421F006F400EBEF48 /* PeakFinding.swift in Sources */,
 				403AF2F821F192A300BF852C /* NibLoadable.swift in Sources */,
 				406E23FF20BDE924006327D4 /* Globals.swift in Sources */,
+				7CC22A3229BDB12C00FDF93C /* CompletedExerciseViewController.swift in Sources */,
 				406E23F520B77F7D006327D4 /* Patient.swift in Sources */,
 				4075D6ED216C2D9F0019E69B /* BirdyConversion.swift in Sources */,
 				AB82EEE725C0A48300ECE5F2 /* BlueSensorSessionViewController.swift in Sources */,
@@ -585,10 +623,12 @@
 				406E23F720B78C57006327D4 /* PatientTableViewCell.swift in Sources */,
 				4041AC3D20C899B80032327C /* Session.swift in Sources */,
 				403AF2E321F1195200BF852C /* DeleteOp.swift in Sources */,
+				7C137F9029BD9E0300E9C696 /* Fonts.swift in Sources */,
 				407B643520BF386C00189986 /* SessionHistoryCollectionReusableView.swift in Sources */,
 				7C14B10C29BD539F00E56F93 /* Colors.swift in Sources */,
 				40220AA322D6B55B00C88A06 /* GaugeView.swift in Sources */,
 				409D75F02091670500E7B605 /* AppDelegate.swift in Sources */,
+				7C14B11A29BD646D00E56F93 /* PausePopup.swift in Sources */,
 				40563D012193787200F0DC70 /* SessionSetupViewController.swift in Sources */,
 				406E240120BDF1E8006327D4 /* DesignableLabel.swift in Sources */,
 			);
