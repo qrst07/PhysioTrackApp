@@ -331,7 +331,7 @@ class SessionViewController: UIViewController {
             StreamProcessor.remove(patient: self.patient)
             self.navigationController?.popViewController(animated: true)
         }))
-        alert.addAction(UIAlertAction(title: "Save and Exit", style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Save and Exit", style: .default, handler: { _ in
             self.endSession()
             self.navigationController?.popViewController(animated: true)
         }))

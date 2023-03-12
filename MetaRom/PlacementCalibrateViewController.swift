@@ -26,6 +26,8 @@ class PlacementCalibrateViewController: UIViewController {
     weak var delegate: PlacementCalibrateDelegate?
     var coachMarksController: CoachMarksController?
 
+    @IBOutlet weak var pageContainer: UIView!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -33,16 +35,25 @@ class PlacementCalibrateViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        placementImage.image = (!isPlacement && calibrateOnTable) ?
+        self.pageContainer.backgroundColor = .white
+        self.pageContainer.layer.cornerRadius = 20
+        self.pageContainer.layer.masksToBounds = true
+        self.pageContainer.addShadow(color: UIColor(red:0, green: 0, blue: 0, alpha: 1),
+                                        alpha: 0.25,
+                                        x: 0,
+                                        y: 4,
+                                        blur: 4,
+                                        spread: 0)
+        
+        placementImage.image = isPlacement ? UIImage(named:"sensorSetup1") : calibrateOnTable ?
             UIImage(named: "tablePlacement")! :
             streamProcessor.joint.placementImage
         placementLabel.text = isPlacement ?
-            "Attach the sensors in the exact location and orientation as shown." :
+            "Insert your sensor into the band pocket such that the arrow can be seen pointing sideways." :
             calibrateOnTable ?
-                "Place sensors on flat surface as pictured, facing forward in same direction as patient." :
-                streamProcessor.joint.calibrateMessage
+                "Place sensors on flat surface as pictured, facing forward in same direction as patient." : "Wrap the band around your arm such that the arrow is pointing downwards. Secure it tightly around your arm."
         
-        mainButton.setTitle(isPlacement ? "Next" : "Calibrate", for: .normal)
+        mainButton.setTitle(isPlacement ? " Next" : " Calibrate & Start Exercise", for: .normal)
         mainButton.isEnabled = true
         calibrateActivity.stopAnimating()
         

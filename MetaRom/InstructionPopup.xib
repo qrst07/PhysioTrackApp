@@ -67,7 +67,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulder Abductions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gfP-2s-NxU">
-                            <rect key="frame" x="85" y="44" width="190" height="21"/>
+                            <rect key="frame" x="80" y="55" width="200" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,6 +78,7 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="BLV-J3-OBM" secondAttribute="bottom" constant="21" id="DYE-3U-JR6"/>
                         <constraint firstItem="bgi-HP-PAu" firstAttribute="centerX" secondItem="gfP-2s-NxU" secondAttribute="centerX" id="Do1-Aa-aIN"/>
+                        <constraint firstItem="slJ-6f-7sL" firstAttribute="top" secondItem="gfP-2s-NxU" secondAttribute="bottom" constant="26" id="Kuf-8k-Cpd"/>
                         <constraint firstItem="bgi-HP-PAu" firstAttribute="top" secondItem="inh-cd-iDO" secondAttribute="top" constant="340" id="YRo-YK-yos"/>
                         <constraint firstItem="bgi-HP-PAu" firstAttribute="top" secondItem="slJ-6f-7sL" secondAttribute="bottom" constant="20" id="Z7V-Uo-hj3"/>
                         <constraint firstItem="BLV-J3-OBM" firstAttribute="leading" secondItem="inh-cd-iDO" secondAttribute="leading" constant="179" id="kNC-YX-HeU"/>

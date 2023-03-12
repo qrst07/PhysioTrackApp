@@ -26,6 +26,8 @@ class ConfigureSessionViewController: UIViewController {
     @IBOutlet var deviceMacLabel: [UILabel]!
     @IBOutlet var deviceColorView: [UIView]!
     
+    @IBOutlet weak var pageContainer: UIView!
+    
     var patient: Patient!
     var sessionNumber: Int!
     weak var delegate: ConfigureSessionDelegate?
@@ -62,8 +64,21 @@ class ConfigureSessionViewController: UIViewController {
 //        jointPickerView.delegate = self
 //        jointPickerView.dataSource = self
 //        jointField.inputView = jointPickerView
-        
+        navigationItem.hidesBackButton = true
+        calibrationSelector.isHidden = true //always set to on body, default
         scannerModel = ScannerModel(delegate: self)
+        
+        startSessionButton.isEnabled = false
+        
+        self.pageContainer.backgroundColor = .white
+        self.pageContainer.layer.cornerRadius = 20
+        self.pageContainer.layer.masksToBounds = true
+        self.pageContainer.addShadow(color: UIColor(red:0, green: 0, blue: 0, alpha: 1),
+                                        alpha: 0.25,
+                                        x: 0,
+                                        y: 4,
+                                        blur: 4,
+                                        spread: 0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

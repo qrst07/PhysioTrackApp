@@ -43,7 +43,7 @@ class SessionSetupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pageTitleLabel.isHidden = true
         let noSensorsController = storyboard!.instantiateViewController(withIdentifier: "noSensorsFound")
 
         //let blueSensorController = (storyboard!.instantiateViewController(withIdentifier: "blueSensor") as! BlueSensorSessionViewController)
