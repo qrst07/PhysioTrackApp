@@ -9,6 +9,17 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter Bold 700.otf">
+            <string>Inter-Bold</string>
+        </array>
+        <array key="Inter Extra Bold 800.otf">
+            <string>Inter-ExtraBold</string>
+        </array>
+        <array key="Inter Semi Bold 600.otf">
+            <string>Inter-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Light Status Bar Navigation Controller-->
         <scene sceneID="vVX-9t-cz9">
@@ -419,8 +430,8 @@
                                 <rect key="frame" x="27" y="88" width="360" height="720"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulder Abductions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zm-AP-8q2">
-                                        <rect key="frame" x="100" y="44" width="160" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="66" y="44" width="228.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -442,7 +453,7 @@
                                         </connections>
                                     </button>
                                     <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOz-gx-eVU" customClass="SkeletonView" customModule="MetaRom" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="124" width="300" height="300"/>
+                                        <rect key="frame" x="30" y="111" width="300" height="300"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="trY-86-qbQ"/>
@@ -518,10 +529,11 @@
                                                         <rect key="frame" x="18" y="18" width="165" height="42"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAn-os-Ofd">
-                                                                <rect key="frame" x="18" y="10" width="129" height="22"/>
+                                                                <rect key="frame" x="14" y="13" width="136" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="Inter-ExtraBold" family="Inter" pointSize="17"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title=" Finish &amp; Save" image="check-circle"/>
+                                                                <state key="normal" title="  Finish &amp; Save" image="check-circle"/>
                                                                 <connections>
                                                                     <action selector="endSessionPressed:" destination="hS7-Wt-yMF" eventType="touchUpInside" id="uZp-cM-ikz"/>
                                                                 </connections>
@@ -537,10 +549,11 @@
                                                         <rect key="frame" x="91" y="80" width="160" height="42"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfR-jb-WOw">
-                                                                <rect key="frame" x="13" y="10" width="135" height="22"/>
+                                                                <rect key="frame" x="8" y="11" width="144" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="Inter-ExtraBold" family="Inter" pointSize="17"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title=" Next Exercise" image="play"/>
+                                                                <state key="normal" title="  Next Exercise" image="play"/>
                                                                 <connections>
                                                                     <action selector="endSessionPressed:" destination="hS7-Wt-yMF" eventType="touchUpInside" id="G5J-fX-4Df"/>
                                                                 </connections>
@@ -552,10 +565,11 @@
                                                         <rect key="frame" x="237" y="18" width="87" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB5-Z6-RQs">
-                                                                <rect key="frame" x="10" y="10" width="69" height="22"/>
+                                                                <rect key="frame" x="7" y="10" width="73" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="Inter-ExtraBold" family="Inter" pointSize="17"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title=" Notes" image="notes"/>
+                                                                <state key="normal" title="  Notes" image="notes"/>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -602,8 +616,8 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKD-Ap-580">
-                                        <rect key="frame" x="159" y="355" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="154" y="360.5" width="52.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -618,7 +632,7 @@
                                     <constraint firstItem="8zm-AP-8q2" firstAttribute="centerX" secondItem="3Ev-Hx-db1" secondAttribute="centerX" id="VtF-tf-hJA"/>
                                     <constraint firstItem="mKD-Ap-580" firstAttribute="top" secondItem="8zm-AP-8q2" secondAttribute="bottom" constant="290" id="dQB-A2-8zq"/>
                                     <constraint firstItem="mKD-Ap-580" firstAttribute="centerX" secondItem="vOz-gx-eVU" secondAttribute="centerX" id="hch-fN-TYK"/>
-                                    <constraint firstItem="vOz-gx-eVU" firstAttribute="top" secondItem="3Ev-Hx-db1" secondAttribute="top" constant="124" id="mKC-u0-85A"/>
+                                    <constraint firstItem="vOz-gx-eVU" firstAttribute="top" secondItem="3Ev-Hx-db1" secondAttribute="top" constant="111" id="mKC-u0-85A"/>
                                     <constraint firstItem="vOz-gx-eVU" firstAttribute="centerX" secondItem="huA-gF-Jwu" secondAttribute="centerX" id="pUo-5p-vZw"/>
                                     <constraint firstAttribute="trailing" secondItem="tfR-Co-i4o" secondAttribute="trailing" constant="13" id="ul9-W4-cyf"/>
                                     <constraint firstItem="huA-gF-Jwu" firstAttribute="leading" secondItem="3Ev-Hx-db1" secondAttribute="leading" id="vhu-wI-XUb"/>
@@ -1569,17 +1583,20 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
                                 <rect key="frame" x="27" y="88" width="360" height="720"/>
                                 <subviews>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Mbf-MN-j2t">
-                                        <rect key="frame" x="123" y="638" width="20" height="20"/>
+                                        <rect key="frame" x="123" y="630" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="cpM-gf-XIt"/>
                                             <constraint firstAttribute="height" constant="20" id="gEY-qd-kce"/>
                                         </constraints>
                                     </activityIndicatorView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftHipPlacement" translatesAutoresizingMaskIntoConstraints="NO" id="23V-sh-hBC">
-                                        <rect key="frame" x="70.5" y="92" width="219" height="343"/>
+                                        <rect key="frame" x="70.5" y="92" width="219" height="360.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="360.5" id="buz-50-AAO"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8i-4d-biX">
-                                        <rect key="frame" x="36" y="460" width="300" height="140"/>
+                                        <rect key="frame" x="36" y="477.5" width="300" height="86"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="mai-F1-bZn"/>
                                         </constraints>
@@ -1589,7 +1606,7 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calibrate your sensors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF9-ub-vdQ">
-                                        <rect key="frame" x="82.5" y="40" width="195.5" height="21"/>
+                                        <rect key="frame" x="82.5" y="40" width="195" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="JC1-s0-Tcw"/>
                                         </constraints>
@@ -1598,7 +1615,7 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZ2-tH-Sxl">
-                                        <rect key="frame" x="46" y="628" width="280" height="40"/>
+                                        <rect key="frame" x="46" y="620" width="280" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="NFR-gp-884"/>
@@ -1616,17 +1633,17 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="720" id="5tZ-iH-Dog"/>
                                     <constraint firstItem="eZ2-tH-Sxl" firstAttribute="centerX" secondItem="O8i-4d-biX" secondAttribute="centerX" id="Qp2-Kf-YDe"/>
                                     <constraint firstItem="ZF9-ub-vdQ" firstAttribute="centerX" secondItem="O8i-4d-biX" secondAttribute="centerX" constant="-6" id="UGe-Hm-ydn"/>
+                                    <constraint firstAttribute="width" constant="360" id="gLa-IO-u1t"/>
+                                    <constraint firstItem="eZ2-tH-Sxl" firstAttribute="top" secondItem="O8i-4d-biX" secondAttribute="bottom" constant="56.5" id="hf5-AV-sbg"/>
                                     <constraint firstItem="23V-sh-hBC" firstAttribute="top" secondItem="HCe-SX-ivo" secondAttribute="top" constant="92" id="ifY-gk-xpJ"/>
                                     <constraint firstItem="ZF9-ub-vdQ" firstAttribute="centerX" secondItem="HCe-SX-ivo" secondAttribute="centerX" id="kYL-Ff-y34"/>
                                     <constraint firstItem="ZF9-ub-vdQ" firstAttribute="top" secondItem="HCe-SX-ivo" secondAttribute="top" constant="40" id="nEr-Fr-weX"/>
                                     <constraint firstItem="O8i-4d-biX" firstAttribute="top" secondItem="23V-sh-hBC" secondAttribute="bottom" constant="25" id="oRa-mm-d4d"/>
-                                    <constraint firstAttribute="bottom" secondItem="eZ2-tH-Sxl" secondAttribute="bottom" constant="52" id="pSz-mK-FWf"/>
-                                    <constraint firstItem="O8i-4d-biX" firstAttribute="top" secondItem="Mbf-MN-j2t" secondAttribute="bottom" constant="-198" id="sgs-cq-WLQ"/>
-                                    <constraint firstItem="eZ2-tH-Sxl" firstAttribute="top" secondItem="O8i-4d-biX" secondAttribute="bottom" constant="28" id="t32-aU-Y5k"/>
                                     <constraint firstItem="23V-sh-hBC" firstAttribute="centerX" secondItem="HCe-SX-ivo" secondAttribute="centerX" id="uCp-re-uXb"/>
                                     <constraint firstItem="Mbf-MN-j2t" firstAttribute="centerX" secondItem="23V-sh-hBC" secondAttribute="centerX" constant="-47" id="uI8-bp-jan"/>
                                     <constraint firstItem="Mbf-MN-j2t" firstAttribute="centerY" secondItem="eZ2-tH-Sxl" secondAttribute="centerY" id="xUC-HJ-usM"/>

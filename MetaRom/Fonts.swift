@@ -1,11 +1,3 @@
-//
-//  Fonts.swift
-//  MetaRom
-//
-//  Created by A Dey on 2023-03-12.
-//  Copyright © 2023 MBIENTLAB, INC. All rights reserved.
-//
-
 import UIKit
 
 extension UIFont {

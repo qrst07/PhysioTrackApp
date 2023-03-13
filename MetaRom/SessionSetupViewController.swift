@@ -40,11 +40,12 @@ class SessionSetupViewController: UIViewController {
         case configure = 1
         case placement = 2
         case calibrate = 3
+//        case instructions = 4
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageTitleLabel.isHidden = true
+        pageTitleLabel.isHidden = false
         let noSensorsController = storyboard!.instantiateViewController(withIdentifier: "noSensorsFound")
 
         //let blueSensorController = (storyboard!.instantiateViewController(withIdentifier: "blueSensor") as! BlueSensorSessionViewController)
@@ -65,6 +66,8 @@ class SessionSetupViewController: UIViewController {
         let calibrateController = (storyboard!.instantiateViewController(withIdentifier: "placementAndCalibrate") as! PlacementCalibrateViewController)
         calibrateController.isPlacement = false
         calibrateController.delegate = self
+        
+//        let instructionController = (storyboard!.instantiateViewController(withIdentifier: "instructionView") as! InstructionViewController)
 
         pages = [
             (noSensorsController, "Turn On Sensors"),
@@ -202,3 +205,13 @@ extension SessionSetupViewController: PlacementCalibrateDelegate {
         }
     }
 }
+
+//extension SessionSetupViewController: InstructionViewDelegate {
+////    func hidesBackButton(_ value: Bool) {
+////        navigationItem.hidesBackButton = value
+////    }
+////
+//    func didFinish(_ controller: InstructionViewController) {
+//    }
+//}
+

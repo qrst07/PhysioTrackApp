@@ -89,7 +89,7 @@ class PlacementCalibrateViewController: UIViewController {
             if let _self = self {
                 _self.streamProcessor.startStream()
                 _self.delegate?.hidesBackButton(false)
-                _self.delegate?.didFinish(_self)
+                _self.delegate?.didFinish(_self) // i think this closes it
             }
         }
     }

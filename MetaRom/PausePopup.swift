@@ -10,6 +10,7 @@ import UIKit
 
 class PausePopup: UIViewController {
 
+    @IBOutlet weak var exercisePausedLabel: UILabel!
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
@@ -78,6 +79,7 @@ class PausePopup: UIViewController {
         resumeLabel.layer.cornerRadius = 20
         resumeLabel.layer.masksToBounds =  true
         resumeLabel.backgroundColor = UIColor.amethyst
+        resumeButton.titleLabel?.font = UIFont.textStyle7
 
         finishLabel.layer.cornerRadius = 18
         finishLabel.layer.masksToBounds =  true
@@ -85,6 +87,7 @@ class PausePopup: UIViewController {
         finishLabel.layer.borderWidth =  2
         finishLabel.backgroundColor = UIColor.daisy
         finishButton.setTitleColor(UIColor.pebble, for: .normal)
+        finishButton.titleLabel?.font = UIFont.textStyle7
 
         quitLabel.layer.cornerRadius = 18
         quitLabel.layer.masksToBounds =  true
@@ -92,6 +95,7 @@ class PausePopup: UIViewController {
         quitLabel.layer.borderWidth =  2
         quitLabel.backgroundColor = UIColor.daisy
         quitButton.setTitleColor(UIColor.pebble, for: .normal)
+        quitButton.titleLabel?.font = UIFont.textStyle7
 
 
         instructionLabel.layer.cornerRadius = 18
@@ -100,6 +104,11 @@ class PausePopup: UIViewController {
         instructionLabel.layer.borderWidth =  2
         instructionLabel.backgroundColor = UIColor.daisy
         instructionButton.setTitleColor(UIColor.pebble, for: .normal)
+        instructionButton.titleLabel?.font = UIFont.textStyle7
+        
+        exercisePausedLabel.textColor = UIColor.pebble
+        exercisePausedLabel.font = UIFont.textStyle
+        exercisePausedLabel.textAlignment = .center
     }
     
     func appear(sender: UIViewController) {

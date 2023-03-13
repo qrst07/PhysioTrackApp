@@ -54,7 +54,13 @@
 		40F72BD721112D07003C2E7F /* ExerciseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F72BD621112D07003C2E7F /* ExerciseConfig.swift */; };
 		40F72BD92111F449003C2E7F /* SessionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F72BD82111F449003C2E7F /* SessionCollectionViewCell.swift */; };
 		5F432A7D4070A7D40445AE6D /* Pods_MetaRom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F0DC180BD880411C0240A5 /* Pods_MetaRom.framework */; };
-		7C137F9029BD9E0300E9C696 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C137F8F29BD9E0300E9C696 /* Fonts.swift */; };
+		7C06A0B229BF7E55000FAF70 /* IBM Plex Sans Medium 500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C06A0AC29BF7E55000FAF70 /* IBM Plex Sans Medium 500.ttf */; };
+		7C06A0B329BF7E55000FAF70 /* IBM Plex Sans 400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C06A0AD29BF7E55000FAF70 /* IBM Plex Sans 400.ttf */; };
+		7C06A0B429BF7E55000FAF70 /* Inter Bold 700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C06A0AE29BF7E55000FAF70 /* Inter Bold 700.otf */; };
+		7C06A0B529BF7E55000FAF70 /* Inter Extra Bold 800.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C06A0AF29BF7E55000FAF70 /* Inter Extra Bold 800.otf */; };
+		7C06A0B629BF7E55000FAF70 /* Inter Black 900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C06A0B029BF7E55000FAF70 /* Inter Black 900.otf */; };
+		7C06A0B729BF7E55000FAF70 /* Inter Semi Bold 600.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C06A0B129BF7E55000FAF70 /* Inter Semi Bold 600.otf */; };
+		7C06A0B929BF806B000FAF70 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06A0B829BF806B000FAF70 /* Fonts.swift */; };
 		7C14B10C29BD539F00E56F93 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B10B29BD539F00E56F93 /* Colors.swift */; };
 		7C14B11129BD5FDF00E56F93 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B11029BD5FDF00E56F93 /* UIView.swift */; };
 		7C14B11329BD606000E56F93 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B11229BD606000E56F93 /* UIBezierPath.swift */; };
@@ -141,7 +147,13 @@
 		557B597E7CD0FCF8752B7794 /* Pods-Theragoni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Theragoni.release.xcconfig"; path = "Pods/Target Support Files/Pods-Theragoni/Pods-Theragoni.release.xcconfig"; sourceTree = "<group>"; };
 		599625C35694F30C54D2F824 /* Pods-MetaRomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaRomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetaRomTests/Pods-MetaRomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		742438D1FDD5356878BCC2A7 /* Pods-TheragoniTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheragoniTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheragoniTests/Pods-TheragoniTests.release.xcconfig"; sourceTree = "<group>"; };
-		7C137F8F29BD9E0300E9C696 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		7C06A0AC29BF7E55000FAF70 /* IBM Plex Sans Medium 500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBM Plex Sans Medium 500.ttf"; sourceTree = "<group>"; };
+		7C06A0AD29BF7E55000FAF70 /* IBM Plex Sans 400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBM Plex Sans 400.ttf"; sourceTree = "<group>"; };
+		7C06A0AE29BF7E55000FAF70 /* Inter Bold 700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter Bold 700.otf"; sourceTree = "<group>"; };
+		7C06A0AF29BF7E55000FAF70 /* Inter Extra Bold 800.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter Extra Bold 800.otf"; sourceTree = "<group>"; };
+		7C06A0B029BF7E55000FAF70 /* Inter Black 900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter Black 900.otf"; sourceTree = "<group>"; };
+		7C06A0B129BF7E55000FAF70 /* Inter Semi Bold 600.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter Semi Bold 600.otf"; sourceTree = "<group>"; };
+		7C06A0B829BF806B000FAF70 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7C14B10B29BD539F00E56F93 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7C14B11029BD5FDF00E56F93 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		7C14B11229BD606000E56F93 /* UIBezierPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
@@ -286,6 +298,7 @@
 		409D75EE2091670500E7B605 /* MetaRom */ = {
 			isa = PBXGroup;
 			children = (
+				7C06A0AB29BF7DA8000FAF70 /* Fonts */,
 				7C14B10D29BD5F8A00E56F93 /* Extensions */,
 				7C14B10A29BD538E00E56F93 /* Styles */,
 				4048F27320E187E900AAB954 /* Processing */,
@@ -354,11 +367,24 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		7C06A0AB29BF7DA8000FAF70 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7C06A0AD29BF7E55000FAF70 /* IBM Plex Sans 400.ttf */,
+				7C06A0AC29BF7E55000FAF70 /* IBM Plex Sans Medium 500.ttf */,
+				7C06A0B029BF7E55000FAF70 /* Inter Black 900.otf */,
+				7C06A0AE29BF7E55000FAF70 /* Inter Bold 700.otf */,
+				7C06A0AF29BF7E55000FAF70 /* Inter Extra Bold 800.otf */,
+				7C06A0B129BF7E55000FAF70 /* Inter Semi Bold 600.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		7C14B10A29BD538E00E56F93 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
 				7C14B10B29BD539F00E56F93 /* Colors.swift */,
-				7C137F8F29BD9E0300E9C696 /* Fonts.swift */,
+				7C06A0B829BF806B000FAF70 /* Fonts.swift */,
 			);
 			name = Styles;
 			sourceTree = "<group>";
@@ -486,8 +512,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C06A0B229BF7E55000FAF70 /* IBM Plex Sans Medium 500.ttf in Resources */,
 				409D763220916CBA00E7B605 /* arm.scnassets in Resources */,
+				7C06A0B529BF7E55000FAF70 /* Inter Extra Bold 800.otf in Resources */,
 				D0DF404D2149BF29005EE04C /* Assets.xcassets in Resources */,
+				7C06A0B429BF7E55000FAF70 /* Inter Bold 700.otf in Resources */,
+				7C06A0B729BF7E55000FAF70 /* Inter Semi Bold 600.otf in Resources */,
+				7C06A0B329BF7E55000FAF70 /* IBM Plex Sans 400.ttf in Resources */,
+				7C06A0B629BF7E55000FAF70 /* Inter Black 900.otf in Resources */,
 				7CE9094029BAFA0700E0BD80 /* InstructionPopup.xib in Resources */,
 				403AF2EC21F15F8D00BF852C /* MeasurementDetailView.xib in Resources */,
 				409D75FA2091670700E7B605 /* LaunchScreen.storyboard in Resources */,
@@ -595,6 +627,7 @@
 				40D5241620B779DD007628B2 /* PatientTableViewController.swift in Sources */,
 				40220A7822D50B1E00C88A06 /* RoutineConfig.swift in Sources */,
 				4075D6F0216D332B0019E69B /* PlacementCalibrateViewController.swift in Sources */,
+				7C06A0B929BF806B000FAF70 /* Fonts.swift in Sources */,
 				40EBB701215550EB00787A5C /* LightStatusBarNavigationController.swift in Sources */,
 				7C14B11329BD606000E56F93 /* UIBezierPath.swift in Sources */,
 				4048F27D20E1927900AAB954 /* JointConfig.swift in Sources */,
@@ -623,7 +656,6 @@
 				406E23F720B78C57006327D4 /* PatientTableViewCell.swift in Sources */,
 				4041AC3D20C899B80032327C /* Session.swift in Sources */,
 				403AF2E321F1195200BF852C /* DeleteOp.swift in Sources */,
-				7C137F9029BD9E0300E9C696 /* Fonts.swift in Sources */,
 				407B643520BF386C00189986 /* SessionHistoryCollectionReusableView.swift in Sources */,
 				7C14B10C29BD539F00E56F93 /* Colors.swift in Sources */,
 				40220AA322D6B55B00C88A06 /* GaugeView.swift in Sources */,

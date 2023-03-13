@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter Bold 700.otf">
+            <string>Inter-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InstructionPopup" customModule="MetaRom" customModuleProvider="target">
             <connections>
@@ -32,14 +37,14 @@
                     <rect key="frame" x="27" y="88.5" width="360" height="719"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructionImage" translatesAutoresizingMaskIntoConstraints="NO" id="slJ-6f-7sL">
-                            <rect key="frame" x="71" y="102" width="218" height="218"/>
+                            <rect key="frame" x="71" y="101" width="218" height="218"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="218" id="2Wh-dr-fKd"/>
                                 <constraint firstAttribute="height" constant="218" id="BxB-jv-6qM"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgi-HP-PAu">
-                            <rect key="frame" x="40" y="340" width="280" height="326"/>
+                            <rect key="frame" x="40" y="339" width="280" height="326"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="280" id="3P9-Sf-0oj"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="H9i-zB-3yT"/>
@@ -67,9 +72,9 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulder Abductions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gfP-2s-NxU">
-                            <rect key="frame" x="80" y="55" width="200" height="21"/>
+                            <rect key="frame" x="63" y="54" width="234" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="22"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -79,7 +84,6 @@
                         <constraint firstAttribute="bottom" secondItem="BLV-J3-OBM" secondAttribute="bottom" constant="21" id="DYE-3U-JR6"/>
                         <constraint firstItem="bgi-HP-PAu" firstAttribute="centerX" secondItem="gfP-2s-NxU" secondAttribute="centerX" id="Do1-Aa-aIN"/>
                         <constraint firstItem="slJ-6f-7sL" firstAttribute="top" secondItem="gfP-2s-NxU" secondAttribute="bottom" constant="26" id="Kuf-8k-Cpd"/>
-                        <constraint firstItem="bgi-HP-PAu" firstAttribute="top" secondItem="inh-cd-iDO" secondAttribute="top" constant="340" id="YRo-YK-yos"/>
                         <constraint firstItem="bgi-HP-PAu" firstAttribute="top" secondItem="slJ-6f-7sL" secondAttribute="bottom" constant="20" id="Z7V-Uo-hj3"/>
                         <constraint firstItem="BLV-J3-OBM" firstAttribute="leading" secondItem="inh-cd-iDO" secondAttribute="leading" constant="179" id="kNC-YX-HeU"/>
                         <constraint firstItem="slJ-6f-7sL" firstAttribute="centerX" secondItem="gfP-2s-NxU" secondAttribute="centerX" id="qUb-TV-JWh"/>

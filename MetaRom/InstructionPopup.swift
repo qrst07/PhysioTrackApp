@@ -56,13 +56,15 @@ class InstructionPopup: UIViewController {
         instructionText.textColor = UIColor.smoke
         instructionText.font = UIFont.textStyle5
         instructionText.textAlignment = .left
+        instructionText.font = UIFont.textStyle5
         instructionText.text = "1. Stand with your arm to your side and your palm facing your body. \n\n2. Slowly raise your arm to a 90 degree angle. Be sure not to raise your shoulders. \n\n3. Hold your arm at 90 degrees for 1 second. \n\n4. Lower your arm back to your side."
         
         titleLabel.contentMode = .scaleToFill
         titleLabel.numberOfLines = 0
         titleLabel.textColor = UIColor.pebble
-        titleLabel.font = UIFont.textStyle
         titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.textStyle
+        titleLabel.adjustsFontSizeToFitWidth = true //test out
     }
     
     func appear(sender: UIViewController) {

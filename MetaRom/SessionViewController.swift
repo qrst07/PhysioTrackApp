@@ -65,6 +65,10 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     
+    // instruction view before exercise
+    
+    @IBOutlet weak var InstructionViewController: UIView!
+    
     @IBOutlet weak var instructionButton: UIButton!
     @IBAction func showInstructions(_ sender: Any) {
         let instructionPopup = InstructionPopup()
@@ -127,6 +131,11 @@ class SessionViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
+        
+        openInstructions(_sender: self)
+        
+//        let test = instructionPopup()
+//        test.appear(self)
         
         //hide items
         feedbackLabel.isHidden = true
@@ -400,7 +409,13 @@ class SessionViewController: UIViewController {
     //        destination.exercise = exercise!
     //    }
     //}
+    func openInstructions(_sender: Any) {
+        let instructionPopup = InstructionPopup()
+        instructionPopup.appear(sender: self)
+    }
 }
+
+
 
 /*extension SessionViewController: CoachMarksControllerDataSource {
     func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: (UIView & CoachMarkBodyView), arrowView: (UIView & CoachMarkArrowView)?) {

@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="backView" destination="cDY-bM-Z4E" id="hqM-6r-2VQ"/>
                 <outlet property="contentView" destination="mGg-oJ-Zl3" id="tf8-cI-90e"/>
+                <outlet property="exercisePausedLabel" destination="6QR-kF-bjn" id="WlH-zD-zLd"/>
                 <outlet property="finishButton" destination="Yoo-uU-oRd" id="BJh-HJ-8aQ"/>
                 <outlet property="finishLabel" destination="nW1-A7-iwB" id="hFl-3o-8Nv"/>
                 <outlet property="instructionButton" destination="Iih-Yu-flM" id="c02-uo-QIx"/>
@@ -44,12 +45,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tu8-fg-Zex">
-                            <rect key="frame" x="68" y="86" width="203" height="42"/>
+                            <rect key="frame" x="68" y="77" width="203" height="42"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kN-pY-428">
-                                    <rect key="frame" x="0.0" y="10" width="203" height="22"/>
+                                    <rect key="frame" x="-4" y="10" width="203" height="22"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title=" Resume Exercise" image="play"/>
+                                    <state key="normal" title="  Resume Exercise" image="play"/>
                                     <connections>
                                         <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="oPu-SC-GJS"/>
                                     </connections>
@@ -57,19 +58,19 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBlueColor"/>
                             <constraints>
-                                <constraint firstItem="5kN-pY-428" firstAttribute="leading" secondItem="Tu8-fg-Zex" secondAttribute="leading" id="PTr-MY-CZO"/>
-                                <constraint firstItem="5kN-pY-428" firstAttribute="centerX" secondItem="Tu8-fg-Zex" secondAttribute="centerX" id="wVg-fP-Y3e"/>
+                                <constraint firstItem="5kN-pY-428" firstAttribute="leading" secondItem="Tu8-fg-Zex" secondAttribute="leading" constant="-4" id="PTr-MY-CZO"/>
+                                <constraint firstItem="5kN-pY-428" firstAttribute="centerX" secondItem="Tu8-fg-Zex" secondAttribute="centerX" constant="-4" id="wVg-fP-Y3e"/>
                                 <constraint firstItem="5kN-pY-428" firstAttribute="top" secondItem="Tu8-fg-Zex" secondAttribute="top" constant="10" id="yPm-fL-IHO"/>
                                 <constraint firstItem="5kN-pY-428" firstAttribute="centerY" secondItem="Tu8-fg-Zex" secondAttribute="centerY" id="zZ2-GB-6cs"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nW1-A7-iwB">
-                            <rect key="frame" x="87" y="148" width="165" height="35"/>
+                            <rect key="frame" x="87" y="135" width="165" height="43"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoo-uU-oRd">
-                                    <rect key="frame" x="0.0" y="6" width="165" height="22"/>
+                                    <rect key="frame" x="0.0" y="10" width="165" height="22"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title=" Finish &amp; Save" image="check-circle"/>
+                                    <state key="normal" title="  Finish &amp; Save" image="check-circle"/>
                                     <connections>
                                         <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="oQ0-H4-8KR"/>
                                         <action selector="saveExit:" destination="-1" eventType="touchUpInside" id="IbK-4c-GfW"/>
@@ -79,18 +80,18 @@
                             <color key="backgroundColor" systemColor="systemBlueColor"/>
                             <constraints>
                                 <constraint firstItem="Yoo-uU-oRd" firstAttribute="leading" secondItem="nW1-A7-iwB" secondAttribute="leading" id="XF5-dv-tSV"/>
-                                <constraint firstItem="Yoo-uU-oRd" firstAttribute="top" secondItem="nW1-A7-iwB" secondAttribute="top" constant="6" id="b87-hW-Nuk"/>
+                                <constraint firstItem="Yoo-uU-oRd" firstAttribute="top" secondItem="nW1-A7-iwB" secondAttribute="top" constant="10" id="b87-hW-Nuk"/>
                                 <constraint firstItem="Yoo-uU-oRd" firstAttribute="centerX" secondItem="nW1-A7-iwB" secondAttribute="centerX" id="lEg-G0-L4D"/>
                                 <constraint firstItem="Yoo-uU-oRd" firstAttribute="centerY" secondItem="nW1-A7-iwB" secondAttribute="centerY" constant="-0.5" id="t1D-fL-XTw"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDG-OG-7gD">
-                            <rect key="frame" x="53" y="204" width="233" height="35"/>
+                            <rect key="frame" x="48" y="195" width="243" height="42"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWa-J0-NpL">
-                                    <rect key="frame" x="0.0" y="5" width="223" height="30"/>
+                                    <rect key="frame" x="8" y="6" width="227" height="30"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title=" Quit &amp; Discard Exercise" image="close"/>
+                                    <state key="normal" title="  Quit &amp; Discard Exercise" image="close"/>
                                     <connections>
                                         <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="OSN-39-QZY"/>
                                         <action selector="quitExit:" destination="-1" eventType="touchUpInside" id="vjD-CJ-nf6"/>
@@ -99,19 +100,19 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBlueColor"/>
                             <constraints>
-                                <constraint firstItem="dWa-J0-NpL" firstAttribute="top" secondItem="fDG-OG-7gD" secondAttribute="top" constant="5" id="M4D-S5-wY5"/>
-                                <constraint firstItem="dWa-J0-NpL" firstAttribute="centerY" secondItem="fDG-OG-7gD" secondAttribute="centerY" constant="2.5" id="S0P-AB-4yu"/>
-                                <constraint firstItem="dWa-J0-NpL" firstAttribute="centerX" secondItem="fDG-OG-7gD" secondAttribute="centerX" constant="-5" id="hPv-QY-CLg"/>
-                                <constraint firstItem="dWa-J0-NpL" firstAttribute="leading" secondItem="fDG-OG-7gD" secondAttribute="leading" id="mmE-9r-MmU"/>
+                                <constraint firstItem="dWa-J0-NpL" firstAttribute="top" secondItem="fDG-OG-7gD" secondAttribute="top" constant="6" id="M4D-S5-wY5"/>
+                                <constraint firstItem="dWa-J0-NpL" firstAttribute="centerY" secondItem="fDG-OG-7gD" secondAttribute="centerY" id="S0P-AB-4yu"/>
+                                <constraint firstItem="dWa-J0-NpL" firstAttribute="centerX" secondItem="fDG-OG-7gD" secondAttribute="centerX" id="hPv-QY-CLg"/>
+                                <constraint firstItem="dWa-J0-NpL" firstAttribute="leading" secondItem="fDG-OG-7gD" secondAttribute="leading" constant="8" id="mmE-9r-MmU"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTU-QM-D0Z">
-                            <rect key="frame" x="75" y="259" width="189" height="35"/>
+                            <rect key="frame" x="75" y="256" width="189" height="43"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iih-Yu-flM">
-                                    <rect key="frame" x="20" y="6" width="148.66666666666666" height="22"/>
+                                    <rect key="frame" x="12" y="10" width="164.66666666666666" height="22"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title=" Get Instructions" image="question"/>
+                                    <state key="normal" title="  Get Instructions" image="question"/>
                                     <connections>
                                         <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="6Od-Vp-0Nk"/>
                                         <action selector="viewInstructions:" destination="-1" eventType="touchUpInside" id="J92-ox-5iq"/>
@@ -122,26 +123,30 @@
                             <constraints>
                                 <constraint firstItem="Iih-Yu-flM" firstAttribute="centerY" secondItem="rTU-QM-D0Z" secondAttribute="centerY" constant="-0.5" id="5gQ-qN-0eO"/>
                                 <constraint firstItem="Iih-Yu-flM" firstAttribute="centerX" secondItem="rTU-QM-D0Z" secondAttribute="centerX" constant="-0.1666666666666714" id="68Z-hh-nDs"/>
-                                <constraint firstItem="Iih-Yu-flM" firstAttribute="top" secondItem="rTU-QM-D0Z" secondAttribute="top" constant="6" id="R6w-gF-2Xc"/>
-                                <constraint firstItem="Iih-Yu-flM" firstAttribute="leading" secondItem="rTU-QM-D0Z" secondAttribute="leading" constant="20" id="bwP-sg-D7d"/>
+                                <constraint firstItem="Iih-Yu-flM" firstAttribute="top" secondItem="rTU-QM-D0Z" secondAttribute="top" constant="10" id="R6w-gF-2Xc"/>
+                                <constraint firstItem="Iih-Yu-flM" firstAttribute="leading" secondItem="rTU-QM-D0Z" secondAttribute="leading" constant="12" id="bwP-sg-D7d"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="nW1-A7-iwB" firstAttribute="centerX" secondItem="mGg-oJ-Zl3" secondAttribute="centerX" id="4I9-2a-boX"/>
+                        <constraint firstItem="rTU-QM-D0Z" firstAttribute="centerX" secondItem="mGg-oJ-Zl3" secondAttribute="centerX" id="7ag-65-keB"/>
                         <constraint firstItem="nW1-A7-iwB" firstAttribute="centerX" secondItem="mGg-oJ-Zl3" secondAttribute="centerX" id="7pz-qw-SX4"/>
-                        <constraint firstItem="Tu8-fg-Zex" firstAttribute="top" secondItem="mGg-oJ-Zl3" secondAttribute="top" constant="86" id="ERl-qj-CZM"/>
-                        <constraint firstItem="fDG-OG-7gD" firstAttribute="top" secondItem="nW1-A7-iwB" secondAttribute="bottom" constant="21" id="ESH-cv-9Og"/>
+                        <constraint firstItem="Tu8-fg-Zex" firstAttribute="top" secondItem="mGg-oJ-Zl3" secondAttribute="top" constant="77" id="ERl-qj-CZM"/>
+                        <constraint firstItem="fDG-OG-7gD" firstAttribute="top" secondItem="nW1-A7-iwB" secondAttribute="bottom" constant="17" id="ESH-cv-9Og"/>
                         <constraint firstItem="6QR-kF-bjn" firstAttribute="top" secondItem="mGg-oJ-Zl3" secondAttribute="top" constant="30" id="HQC-WN-Xw3"/>
                         <constraint firstItem="nW1-A7-iwB" firstAttribute="centerX" secondItem="rTU-QM-D0Z" secondAttribute="centerX" id="NdC-zT-N3e"/>
                         <constraint firstItem="nW1-A7-iwB" firstAttribute="centerX" secondItem="mGg-oJ-Zl3" secondAttribute="centerX" id="O6z-3R-zQP"/>
-                        <constraint firstItem="rTU-QM-D0Z" firstAttribute="top" secondItem="fDG-OG-7gD" secondAttribute="bottom" constant="20" id="QEC-Kj-Xpx"/>
+                        <constraint firstItem="rTU-QM-D0Z" firstAttribute="top" secondItem="fDG-OG-7gD" secondAttribute="bottom" constant="19" id="QEC-Kj-Xpx"/>
                         <constraint firstItem="Tu8-fg-Zex" firstAttribute="leading" secondItem="mGg-oJ-Zl3" secondAttribute="leading" constant="68" id="Xv7-dM-6hw"/>
                         <constraint firstItem="nW1-A7-iwB" firstAttribute="leading" secondItem="mGg-oJ-Zl3" secondAttribute="leading" constant="87" id="Ybh-mb-bDo"/>
                         <constraint firstItem="nW1-A7-iwB" firstAttribute="centerX" secondItem="fDG-OG-7gD" secondAttribute="centerX" id="agj-Ct-1tu"/>
-                        <constraint firstItem="nW1-A7-iwB" firstAttribute="top" secondItem="Tu8-fg-Zex" secondAttribute="bottom" constant="20" id="eYC-Z9-DBu"/>
+                        <constraint firstItem="nW1-A7-iwB" firstAttribute="top" secondItem="Tu8-fg-Zex" secondAttribute="bottom" constant="16" id="eYC-Z9-DBu"/>
                         <constraint firstItem="Tu8-fg-Zex" firstAttribute="centerX" secondItem="mGg-oJ-Zl3" secondAttribute="centerX" id="fQ0-et-441"/>
                         <constraint firstItem="rTU-QM-D0Z" firstAttribute="leading" secondItem="mGg-oJ-Zl3" secondAttribute="leading" constant="75" id="oxW-No-kMQ"/>
+                        <constraint firstItem="Tu8-fg-Zex" firstAttribute="centerX" secondItem="mGg-oJ-Zl3" secondAttribute="centerX" id="pcE-0K-zDI"/>
+                        <constraint firstItem="fDG-OG-7gD" firstAttribute="centerX" secondItem="mGg-oJ-Zl3" secondAttribute="centerX" id="qU4-og-9bo"/>
                         <constraint firstItem="6QR-kF-bjn" firstAttribute="centerX" secondItem="mGg-oJ-Zl3" secondAttribute="centerX" id="yT9-72-zCB"/>
                     </constraints>
                 </view>
