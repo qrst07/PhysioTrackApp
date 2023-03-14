@@ -283,7 +283,12 @@ class SessionViewController: UIViewController {
     }
     
     func addInitStyling() {
-        skeletonView.backgroundColor = UIColor.smoke
+        skeletonView.backgroundColor = UIColor.indigo
+        skeletonView.layer.masksToBounds = true
+        skeletonView.layer.borderColor = UIColor.emerald.cgColor
+        skeletonView.layer.borderWidth = 10
+        skeletonView.layer.cornerRadius = 20
+
         //font, color
         setCountLabel.textColor = UIColor.indigo
         setCountLabel.font = UIFont.textStyle2
@@ -692,27 +697,21 @@ extension SessionViewController: StreamProcessorDelegate {
                }
         }
         
-        if (currentValue > exercise.exerciseThreshold.upperBound) {
+        if (currentValue > exercise.exerciseThreshold.upperBound+10) {
+            incorrectRep = true
+            skeletonView.layer.borderColor = UIColor.darkOrange.cgColor
             feedbackLabel.backgroundColor = UIColor.lightOrange
             feedbackLabel.borderColor = UIColor.darkOrange
             feedbackLabel.textColor = UIColor.darkOrange
-            feedbackLabel.text = " Lower your arm! "
+            feedbackLabel.text = " Don't shrug your shoulder! "
             self.feedbackLabel.isHidden = false
                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                    self.feedbackLabel.isHidden = true
                }
         }
         
-        if (currentValue > exercise.exerciseThreshold.upperBound+10) {
-            incorrectRep = true
-            feedbackLabel.text = " Don't shrug your shoulders! "
-            feedbackLabel.backgroundColor = UIColor.lightOrange
-            feedbackLabel.borderColor = UIColor.darkOrange
-            feedbackLabel.textColor = UIColor.darkOrange
-            self.feedbackLabel.isHidden = false
-               DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                   self.feedbackLabel.isHidden = true
-               }
+        if (currentValue < exercise.exerciseThreshold.upperBound) {
+            skeletonView.layer.borderColor = UIColor.emerald.cgColor
         }
     }
     

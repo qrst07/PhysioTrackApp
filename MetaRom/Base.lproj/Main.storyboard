@@ -1400,7 +1400,7 @@
             </objects>
             <point key="canvasLocation" x="1721" y="1577"/>
         </scene>
-        <!--Session Setup View Controller-->
+        <!--  -->
         <scene sceneID="IYu-Vg-ZUV">
             <objects>
                 <viewController id="gb3-cE-IYa" customClass="SessionSetupViewController" customModule="MetaRom" customModuleProvider="target" sceneMemberID="viewController">
@@ -1437,7 +1437,7 @@
                             <constraint firstItem="rey-Za-KjA" firstAttribute="leading" secondItem="JW3-tX-i0m" secondAttribute="leading" id="ibB-9H-hX9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pTl-R1-BKU"/>
+                    <navigationItem key="navigationItem" title="  " id="pTl-R1-BKU"/>
                     <connections>
                         <outlet property="pageTitleLabel" destination="98f-Eu-llC" id="qre-vm-k3W"/>
                         <segue destination="hS7-Wt-yMF" kind="show" identifier="showSession" id="NBT-x3-S6m"/>
@@ -1642,7 +1642,7 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
             </objects>
             <point key="canvasLocation" x="1904" y="-1908"/>
         </scene>
-        <!--Playlist View Controller-->
+        <!--  -->
         <scene sceneID="boe-RP-6iw">
             <objects>
                 <viewController storyboardIdentifier="PlaylistViewController" id="OGz-cH-ASo" customClass="PlaylistViewController" customModule="MetaRom" customModuleProvider="target" sceneMemberID="viewController">
@@ -2208,7 +2208,7 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
                             <constraint firstItem="lUS-MZ-XNa" firstAttribute="bottom" secondItem="b66-FA-5WS" secondAttribute="bottom" id="zc7-9e-ttt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="o59-Og-Ht4"/>
+                    <navigationItem key="navigationItem" title="  " id="o59-Og-Ht4"/>
                     <connections>
                         <outlet property="beginPlaylistLabel" destination="FDv-tj-bHR" id="We8-um-wFz"/>
                         <outlet property="bookmarkImageView" destination="Jhv-iO-0hV" id="jhi-2p-FaI"/>
@@ -2266,7 +2266,7 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
             </objects>
             <point key="canvasLocation" x="1342" y="133"/>
         </scene>
-        <!--Home View Controller-->
+        <!--  -->
         <scene sceneID="EIR-Va-eja">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="idd-KT-VUq" customClass="HomeViewController" customModule="MetaRom" customModuleProvider="target" sceneMemberID="viewController">
@@ -2739,7 +2739,7 @@ If the sensors are not blinking, make sure they are fully charged and advertisin
                             <constraint firstItem="fv4-Bc-p3k" firstAttribute="leading" secondItem="68i-Zu-sKV" secondAttribute="leading" id="ajD-Jc-BkN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nuq-Ov-NYY"/>
+                    <navigationItem key="navigationItem" title="  " id="nuq-Ov-NYY"/>
                     <connections>
                         <outlet property="body1Label" destination="Gno-Wn-roW" id="7OZ-5l-b5P"/>
                         <outlet property="bookmarkImageView" destination="czi-yP-gLb" id="Yg7-2x-N2s"/>
