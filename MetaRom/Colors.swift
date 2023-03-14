@@ -56,4 +56,12 @@ extension UIColor {
     @nonobjc class var slate: UIColor {
         return UIColor(red: 130.0 / 255.0, green: 130.0 / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
     }
+    
+    @nonobjc class var indigo: UIColor {
+        return UIColor(red: 0.0 / 255.0, green: 32.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var lightBlue: UIColor {
+        return UIColor(red: 92.0 / 255.0, green: 143.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
+    }
 }

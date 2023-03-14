@@ -64,7 +64,7 @@ class PausePopup: UIViewController {
     
     func configView() {
         self.view.backgroundColor = .clear
-        self.backView.backgroundColor = .salt.withAlphaComponent(0.65)
+        self.backView.backgroundColor = .indigo.withAlphaComponent(0.65)
         self.contentView.backgroundColor = .white
         self.contentView.alpha = 0
         self.contentView.layer.cornerRadius = 20
@@ -78,7 +78,7 @@ class PausePopup: UIViewController {
         
         resumeLabel.layer.cornerRadius = 20
         resumeLabel.layer.masksToBounds =  true
-        resumeLabel.backgroundColor = UIColor.amethyst
+        resumeLabel.backgroundColor = UIColor.indigo
         resumeButton.titleLabel?.font = UIFont.textStyle7
 
         finishLabel.layer.cornerRadius = 18

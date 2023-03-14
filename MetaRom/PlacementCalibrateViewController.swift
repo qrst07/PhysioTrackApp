@@ -8,6 +8,8 @@
 
 import UIKit
 import Instructions
+import MetaWear
+import MetaWearCpp
 
 protocol PlacementCalibrateDelegate: class {
     func didFinish(_ controller: PlacementCalibrateViewController)
@@ -19,6 +21,9 @@ class PlacementCalibrateViewController: UIViewController {
     @IBOutlet weak var placementLabel: UILabel!
     @IBOutlet weak var calibrateActivity: UIActivityIndicatorView!
     @IBOutlet weak var mainButton: UIButton!
+    
+    
+    @IBOutlet weak var buttonLabel: UIView!
     
     var streamProcessor: StreamProcessor!
     var isPlacement: Bool!
@@ -35,6 +40,13 @@ class PlacementCalibrateViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        hideLoading()
+        
+        buttonLabel.layer.cornerRadius = 20
+        buttonLabel.layer.masksToBounds =  true
+        buttonLabel.backgroundColor = UIColor.indigo
+        mainButton.titleLabel?.font = UIFont.textStyle7
+        
         self.pageContainer.backgroundColor = .white
         self.pageContainer.layer.cornerRadius = 20
         self.pageContainer.layer.masksToBounds = true
@@ -49,13 +61,11 @@ class PlacementCalibrateViewController: UIViewController {
             UIImage(named: "tablePlacement")! :
             streamProcessor.joint.placementImage
         placementLabel.text = isPlacement ?
-            "Insert your sensor into the band pocket such that the arrow can be seen pointing sideways." :
+            "Insert your sensor into the band pocket." :
             calibrateOnTable ?
-                "Place sensors on flat surface as pictured, facing forward in same direction as patient." : "Wrap the band around your arm such that the arrow is pointing downwards. Secure it tightly around your arm."
+                "Place sensors on flat surface as pictured, facing forward in same direction as patient." : "Wrap the band around your arm and secure it tightly."
         
-        mainButton.setTitle(isPlacement ? " Next" : " Calibrate & Start Exercise", for: .normal)
-        mainButton.isEnabled = true
-        calibrateActivity.stopAnimating()
+
         
         if isPlacement {
             if !Globals.seenPlacementPopup {
@@ -67,6 +77,21 @@ class PlacementCalibrateViewController: UIViewController {
                 coachMarksController!.start(in: .newWindow(over: self, at: nil))
             }
         }
+    }
+    
+    func hideLoading() {
+        mainButton.setTitle(isPlacement ? " Next" : " Calibrate & Start Exercise", for: .normal)
+        mainButton.titleLabel?.font = UIFont.textStyle7
+        mainButton.isEnabled = true
+        calibrateActivity.stopAnimating()
+    }
+    
+    func showLoading() {
+        mainButton.setTitle(nil, for: .normal)
+        mainButton.titleLabel?.font = UIFont.textStyle7
+        mainButton.isEnabled = false
+        mainButton.setImage(nil, for: .normal)
+        calibrateActivity.startAnimating()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,7 +109,8 @@ class PlacementCalibrateViewController: UIViewController {
         
         delegate?.hidesBackButton(true)
         sender.isEnabled = false
-        calibrateActivity.startAnimating()
+        showLoading()
+        mainButton.isEnabled = false
         streamProcessor.doCalibration().continueWith(.mainThread) { [weak self] _ in
             if let _self = self {
                 _self.streamProcessor.startStream()

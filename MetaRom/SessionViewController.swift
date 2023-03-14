@@ -165,7 +165,6 @@ class SessionViewController: UIViewController {
                                         blur: 4,
                                         spread: 0)
         
-        //ADD BACKGROUND COLOR TO SKELETON ?
         
         //FONTS
         addInitStyling()
@@ -285,29 +284,30 @@ class SessionViewController: UIViewController {
         setCountLabel.text = "Set \(String(setCount)) of \(String(totalSets))"
     }
     
-    func addInitStyling() {        
+    func addInitStyling() {
+        skeletonView.backgroundColor = UIColor.smoke
         //font, color
-        setCountLabel.textColor = UIColor.smoke
+        setCountLabel.textColor = UIColor.indigo
         setCountLabel.font = UIFont.textStyle2
         setCountLabel.textAlignment = .center
-        repCountLabel.textColor = UIColor.smoke
+        repCountLabel.textColor = UIColor.indigo
         repCountLabel.font = UIFont.textStyle2
         repCountLabel.textAlignment = .center
-        accuracyLabel.textColor = UIColor.smoke
+        accuracyLabel.textColor = UIColor.indigo
         accuracyLabel.font = UIFont.textStyle2
         accuracyLabel.textAlignment = .center
         
-        titleLabel.textColor = UIColor.pebble
+        titleLabel.textColor = UIColor.indigo
         titleLabel.font = UIFont.textStyle
         titleLabel.textAlignment = .center
         
-        progressView.progressTintColor = UIColor.amethyst
-        progressView.trackTintColor = UIColor.salt
+        progressView.progressTintColor = UIColor.indigo
+        progressView.trackTintColor = UIColor.lightBlue
         
         //button styling
         nextLabel.layer.cornerRadius = 20
         nextLabel.layer.masksToBounds =  true
-        nextLabel.backgroundColor = UIColor.amethyst
+        nextLabel.backgroundColor = UIColor.indigo
 
         finishLabel.layer.cornerRadius = 18
         finishLabel.layer.masksToBounds =  true

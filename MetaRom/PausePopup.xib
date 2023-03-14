@@ -174,7 +174,7 @@
     <resources>
         <image name="check-circle" width="17" height="16"/>
         <image name="close" width="30" height="30"/>
-        <image name="play" width="21" height="21"/>
+        <image name="play" width="6.6666665077209473" height="6.6666665077209473"/>
         <image name="question" width="15" height="21"/>
         <namedColor name="TheraGray">
             <color red="0.42745098039215684" green="0.53725490196078429" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

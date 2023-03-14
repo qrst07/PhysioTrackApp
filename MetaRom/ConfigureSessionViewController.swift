@@ -28,6 +28,8 @@ class ConfigureSessionViewController: UIViewController {
     
     @IBOutlet weak var pageContainer: UIView!
     
+    @IBOutlet weak var buttonLabel: UIView!
+    
     //TODO SUNDAY: patient passed here. needed for stream.
 //    var patient: Patient!
 //    var sessionNumber: Int!
@@ -80,6 +82,12 @@ class ConfigureSessionViewController: UIViewController {
                                         y: 4,
                                         blur: 4,
                                         spread: 0)
+        
+        //TODO: change width based on text, or show diff labels ?
+        buttonLabel.layer.cornerRadius = 20
+        buttonLabel.layer.masksToBounds =  true
+        buttonLabel.backgroundColor = UIColor.indigo
+        startSessionButton.titleLabel?.font = UIFont.textStyle7
     }
     
     override func viewWillDisappear(_ animated: Bool) {
