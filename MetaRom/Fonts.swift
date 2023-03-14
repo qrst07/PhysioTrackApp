@@ -48,5 +48,9 @@ extension UIFont {
     class var textStyle12: UIFont {
         return UIFont(name: "Inter-ExtraBold", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
     }
+    
+    class var textStyle13: UIFont {
+        return UIFont(name: "Inter-SemiBold", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
+    }
 
 }

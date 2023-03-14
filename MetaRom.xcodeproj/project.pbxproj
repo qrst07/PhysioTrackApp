@@ -68,6 +68,7 @@
 		7C14B11B29BD646D00E56F93 /* PausePopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C14B11929BD646D00E56F93 /* PausePopup.xib */; };
 		7C60AC6E29C0C3A600E398D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C60AC6D29C0C3A600E398D0 /* Localizable.strings */; };
 		7C60AC7229C0C49E00E398D0 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60AC7129C0C49E00E398D0 /* PlaylistViewController.swift */; };
+		7CA9177129C0D66E00D17012 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9177029C0D66E00D17012 /* HomeViewController.swift */; };
 		7CC22A3229BDB12C00FDF93C /* CompletedExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */; };
 		7CE9093F29BAFA0700E0BD80 /* InstructionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9093D29BAFA0700E0BD80 /* InstructionPopup.swift */; };
 		7CE9094029BAFA0700E0BD80 /* InstructionPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE9093E29BAFA0700E0BD80 /* InstructionPopup.xib */; };
@@ -163,6 +164,7 @@
 		7C14B11929BD646D00E56F93 /* PausePopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PausePopup.xib; sourceTree = "<group>"; };
 		7C60AC6D29C0C3A600E398D0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7C60AC7129C0C49E00E398D0 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		7CA9177029C0D66E00D17012 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedExerciseViewController.swift; sourceTree = "<group>"; };
 		7CE9093D29BAFA0700E0BD80 /* InstructionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionPopup.swift; sourceTree = "<group>"; };
 		7CE9093E29BAFA0700E0BD80 /* InstructionPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionPopup.xib; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				40EBB700215550EB00787A5C /* LightStatusBarNavigationController.swift */,
 				7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */,
 				7C60AC7129C0C49E00E398D0 /* PlaylistViewController.swift */,
+				7CA9177029C0D66E00D17012 /* HomeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				4057D0C421F006F400EBEF48 /* PeakFinding.swift in Sources */,
 				403AF2F821F192A300BF852C /* NibLoadable.swift in Sources */,
 				406E23FF20BDE924006327D4 /* Globals.swift in Sources */,
+				7CA9177129C0D66E00D17012 /* HomeViewController.swift in Sources */,
 				7CC22A3229BDB12C00FDF93C /* CompletedExerciseViewController.swift in Sources */,
 				406E23F520B77F7D006327D4 /* Patient.swift in Sources */,
 				4075D6ED216C2D9F0019E69B /* BirdyConversion.swift in Sources */,

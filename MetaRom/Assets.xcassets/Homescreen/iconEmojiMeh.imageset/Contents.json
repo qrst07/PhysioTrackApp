@@ -1,0 +1,23 @@
+{
+    "images":[
+    {
+        "filename":"iconEmojiMeh.png",
+        "idiom":"universal",
+        "scale":"1x"
+    },
+    {
+        "filename":"iconEmojiMeh@2x.png",
+        "idiom":"universal",
+        "scale":"2x"
+    },
+    {
+        "filename":"iconEmojiMeh@3x.png",
+        "idiom":"universal",
+        "scale":"3x"
+    }
+    ],
+    "info":{
+        "author":"xcode",
+        "version":1
+    }
+}   

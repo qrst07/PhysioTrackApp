@@ -76,6 +76,10 @@ class PlaylistViewController: UIViewController {
 }
 
 extension PlaylistViewController {
+    @IBAction func unwindToPlaylistViewController(segue: UIStoryboardSegue) {
+        
+    }
+    
     private func setupViews() {
 
         self.view.backgroundColor = UIColor.daisy
@@ -234,8 +238,6 @@ extension PlaylistViewController {
         homeIndicatorView.layer.cornerRadius = 3
         homeIndicatorView.layer.masksToBounds =  true
         homeIndicatorView.backgroundColor = UIColor.daisy
-
-
 
     }
 

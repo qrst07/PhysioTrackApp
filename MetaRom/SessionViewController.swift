@@ -394,7 +394,7 @@ class SessionViewController: UIViewController {
 //        } catch {
 //            self.showOkAlert(title: "Save Failed", message: "Please try again.\n\(error.localizedDescription)")
 //        }
-        performSegue(withIdentifier: "backToPatient", sender: nil)
+        performSegue(withIdentifier: "backToPlaylist", sender: nil)
     }
     
     // for now, next exercise ends session as well
