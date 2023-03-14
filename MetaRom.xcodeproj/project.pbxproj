@@ -66,6 +66,8 @@
 		7C14B11329BD606000E56F93 /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B11229BD606000E56F93 /* UIBezierPath.swift */; };
 		7C14B11A29BD646D00E56F93 /* PausePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14B11829BD646D00E56F93 /* PausePopup.swift */; };
 		7C14B11B29BD646D00E56F93 /* PausePopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C14B11929BD646D00E56F93 /* PausePopup.xib */; };
+		7C60AC6E29C0C3A600E398D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C60AC6D29C0C3A600E398D0 /* Localizable.strings */; };
+		7C60AC7229C0C49E00E398D0 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60AC7129C0C49E00E398D0 /* PlaylistViewController.swift */; };
 		7CC22A3229BDB12C00FDF93C /* CompletedExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */; };
 		7CE9093F29BAFA0700E0BD80 /* InstructionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9093D29BAFA0700E0BD80 /* InstructionPopup.swift */; };
 		7CE9094029BAFA0700E0BD80 /* InstructionPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE9093E29BAFA0700E0BD80 /* InstructionPopup.xib */; };
@@ -159,6 +161,8 @@
 		7C14B11229BD606000E56F93 /* UIBezierPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
 		7C14B11829BD646D00E56F93 /* PausePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePopup.swift; sourceTree = "<group>"; };
 		7C14B11929BD646D00E56F93 /* PausePopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PausePopup.xib; sourceTree = "<group>"; };
+		7C60AC6D29C0C3A600E398D0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7C60AC7129C0C49E00E398D0 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedExerciseViewController.swift; sourceTree = "<group>"; };
 		7CE9093D29BAFA0700E0BD80 /* InstructionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionPopup.swift; sourceTree = "<group>"; };
 		7CE9093E29BAFA0700E0BD80 /* InstructionPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionPopup.xib; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 				D0DF404C2149BF29005EE04C /* Assets.xcassets */,
 				AB86912D25603B6B0035949E /* Colors.xcassets */,
 				AB86913525605AC10035949E /* AppIcon.xcassets */,
+				7C60AC6D29C0C3A600E398D0 /* Localizable.strings */,
 			);
 			path = MetaRom;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				4041AC3A20C8705A0032327C /* SingleSessionViewController.swift */,
 				40EBB700215550EB00787A5C /* LightStatusBarNavigationController.swift */,
 				7CC22A3129BDB12C00FDF93C /* CompletedExerciseViewController.swift */,
+				7C60AC7129C0C49E00E398D0 /* PlaylistViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C60AC6E29C0C3A600E398D0 /* Localizable.strings in Resources */,
 				7C06A0B229BF7E55000FAF70 /* IBM Plex Sans Medium 500.ttf in Resources */,
 				409D763220916CBA00E7B605 /* arm.scnassets in Resources */,
 				7C06A0B529BF7E55000FAF70 /* Inter Extra Bold 800.otf in Resources */,
@@ -660,6 +667,7 @@
 				7C14B10C29BD539F00E56F93 /* Colors.swift in Sources */,
 				40220AA322D6B55B00C88A06 /* GaugeView.swift in Sources */,
 				409D75F02091670500E7B605 /* AppDelegate.swift in Sources */,
+				7C60AC7229C0C49E00E398D0 /* PlaylistViewController.swift in Sources */,
 				7C14B11A29BD646D00E56F93 /* PausePopup.swift in Sources */,
 				40563D012193787200F0DC70 /* SessionSetupViewController.swift in Sources */,
 				406E240120BDF1E8006327D4 /* DesignableLabel.swift in Sources */,

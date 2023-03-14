@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  MetaRom
+
+  Created by A Dey on 2023-03-14.
+  Copyright © 2023 MBIENTLAB, INC. All rights reserved.
+*/
+
+".days.left" = "17 days left";
+".days.left2" = "12 days left";
+".exercises" = "3 exercises";
+".sets.of.15.reps" = "3 sets of 15 reps";
+"begin.playlist" = "Begin playlist";
+"elbow.flexion" = "Elbow Flexion";
+"elbow.flexion.2" = "Elbow Flexion 2";
+"rotator.cuff.injury" = "Rotator Cuff Injury";
+"shoulder.abductions" = "Shoulder Abductions";
+"start.exercise" = "Start exercise";
+"started.january.19th.2023" = "Started January 19th, 2023 ";
+
