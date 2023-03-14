@@ -14,7 +14,13 @@ class InstructionPopup: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var instructionText: UILabel!
     
+    @IBOutlet weak var mainButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    @IBOutlet weak var buttonLabel: UIView!
+    
+    var onStart = false
     
     @IBAction func doneAction(_ sender: UIButton) {
         hide()
@@ -64,12 +70,35 @@ class InstructionPopup: UIViewController {
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.textStyle
 //        titleLabel.adjustsFontSizeToFitWidth = true //test out -- messing up
+        
+
     }
     
-    func appear(sender: UIViewController) {
+    
+    func appear(sender: UIViewController, onStart: Bool) {
         sender.present(self, animated: false) {
             self.show()
+            self.onStart = onStart
+            if onStart {
+                self.loadPlayButton()
+            } else {
+                self.loadStartButton()
+            }
         }
+    }
+    func loadPlayButton() {
+        mainButton.setImage(UIImage(named: "play"), for: .normal)
+        mainButton.setTitle("  Start Exercise", for: .normal)
+        buttonLabel.layer.cornerRadius = 20
+        buttonLabel.layer.masksToBounds =  true
+        buttonLabel.backgroundColor = UIColor.indigo
+        mainButton.titleLabel?.font = UIFont.textStyle7
+        mainButton.titleLabel?.textColor = .white
+        
+    }
+    func loadStartButton() {
+        mainButton.setImage(UIImage(named: "close"), for: .normal)
+        buttonLabel.backgroundColor = .clear
     }
     
     private func show() {

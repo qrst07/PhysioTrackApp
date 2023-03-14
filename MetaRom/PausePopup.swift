@@ -41,8 +41,8 @@ class PausePopup: UIViewController {
     }
     
     @IBAction func viewInstructions(_ sender: Any) {
-        let instructionPopup = InstructionPopup()
-        instructionPopup.appear(sender: self)
+//        let instructionPopup = InstructionPopup()
+//        instructionPopup.appear(sender: self)
     }
     
     init() {

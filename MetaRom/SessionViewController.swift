@@ -72,7 +72,7 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var instructionButton: UIButton!
     @IBAction func showInstructions(_ sender: Any) {
         let instructionPopup = InstructionPopup()
-        instructionPopup.appear(sender: self)
+        instructionPopup.appear(sender: self, onStart: false)
     }
     
     @IBOutlet weak var progressView: UIProgressView!
@@ -94,6 +94,7 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var notesLabel: UIView!
     @IBOutlet weak var notesButton: UIButton!
     
+    var exerciseDone = false
 //    var patient: Patient!
 //    var sessionNumber: Int!
     var repCount = 0 {
@@ -118,9 +119,7 @@ class SessionViewController: UIViewController {
     //var exercise: ExerciseConfig?
     var streamStart: Date?
     var batteryCheckTime = Date()
-    
-    var exerciseComplete = false
-    
+        
     //var coachMarksController: CoachMarksController?
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -262,7 +261,6 @@ class SessionViewController: UIViewController {
     }*/
     
     func repCountUpdated() {
-        // FIX THIS, SHOULD BE TOTAL REPS
         let completeReps = (Float(setCount - 1)*Float(totalReps)) + Float(repCount)
         repCountLabel.text = "\(String(repCount)) of \(String(totalReps)) reps completed"
         
@@ -411,7 +409,7 @@ class SessionViewController: UIViewController {
     //}
     func openInstructions(_sender: Any) {
         let instructionPopup = InstructionPopup()
-        instructionPopup.appear(sender: self)
+        instructionPopup.appear(sender: self, onStart: true)
     }
 }
 
@@ -643,7 +641,7 @@ extension SessionViewController: StreamProcessorDelegate {
         currentValue > exercise.exerciseThreshold.upperBound :
         currentValue < exercise.exerciseThreshold.lowerBound
         if didCross {
-            if checkingTop != exercise.repAtTop {
+            if checkingTop != exercise.repAtTop && (!exerciseDone) {
                 repCount += 1
                 
                 if (incorrectRep) {
@@ -674,6 +672,12 @@ extension SessionViewController: StreamProcessorDelegate {
                 repCountLabel.text = "\(String(totalReps)) of \(String(totalReps)) reps completed"
 //                displayEndExercise()
                 completeExerciseView.isHidden = false
+                exerciseDone = true
+                feedbackLabel.backgroundColor = UIColor.mint
+                feedbackLabel.borderColor = UIColor.emerald
+                feedbackLabel.textColor = UIColor.emerald
+                feedbackLabel.text = " Great job! "
+                self.feedbackLabel.isHidden = false
             }
         }
         

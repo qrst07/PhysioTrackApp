@@ -18,8 +18,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InstructionPopup" customModule="MetaRom" customModuleProvider="target">
             <connections>
                 <outlet property="backView" destination="y3d-DX-nAl" id="igb-Ah-VYy"/>
+                <outlet property="buttonLabel" destination="EDC-8Y-l8R" id="XdR-3L-0cE"/>
                 <outlet property="contentView" destination="inh-cd-iDO" id="zwC-zI-yrd"/>
                 <outlet property="instructionText" destination="bgi-HP-PAu" id="tp4-Be-MnI"/>
+                <outlet property="mainButton" destination="BLV-J3-OBM" id="iSl-0e-TKt"/>
                 <outlet property="titleLabel" destination="gfP-2s-NxU" id="Xtt-gr-mlD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -57,23 +59,6 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-J3-OBM">
-                            <rect key="frame" x="165" y="645" width="30" height="30"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="" image="close">
-                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="5qm-Q0-rPs"/>
-                            </connections>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulder Abductions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gfP-2s-NxU">
                             <rect key="frame" x="66" y="44" width="228.5" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -81,14 +66,36 @@
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDC-8Y-l8R">
+                            <rect key="frame" x="83" y="640" width="195" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-J3-OBM">
+                                    <rect key="frame" x="0.0" y="5" width="195" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="" image="close">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="5qm-Q0-rPs"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.12693122030000001" blue="0.40177774430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="BLV-J3-OBM" firstAttribute="centerX" secondItem="inh-cd-iDO" secondAttribute="centerX" id="9OC-C6-Le4"/>
                         <constraint firstItem="bgi-HP-PAu" firstAttribute="centerX" secondItem="gfP-2s-NxU" secondAttribute="centerX" id="Do1-Aa-aIN"/>
-                        <constraint firstItem="BLV-J3-OBM" firstAttribute="centerX" secondItem="inh-cd-iDO" secondAttribute="centerX" id="JOW-C4-YwM"/>
                         <constraint firstItem="slJ-6f-7sL" firstAttribute="top" secondItem="gfP-2s-NxU" secondAttribute="bottom" constant="26" id="Kuf-8k-Cpd"/>
-                        <constraint firstItem="BLV-J3-OBM" firstAttribute="top" secondItem="slJ-6f-7sL" secondAttribute="bottom" constant="310" id="Vjo-Es-VeY"/>
                         <constraint firstItem="bgi-HP-PAu" firstAttribute="top" secondItem="slJ-6f-7sL" secondAttribute="bottom" constant="17" id="Z7V-Uo-hj3"/>
                         <constraint firstItem="slJ-6f-7sL" firstAttribute="centerX" secondItem="gfP-2s-NxU" secondAttribute="centerX" id="qUb-TV-JWh"/>
                     </constraints>

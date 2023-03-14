@@ -61,7 +61,7 @@ class PlacementCalibrateViewController: UIViewController {
             UIImage(named: "tablePlacement")! :
             streamProcessor.joint.placementImage
         placementLabel.text = isPlacement ?
-            "Insert your sensor into the band pocket." :
+            "Insert the blue sensor into the band pocket." :
             calibrateOnTable ?
                 "Place sensors on flat surface as pictured, facing forward in same direction as patient." : "Wrap the band around your arm and secure it tightly."
         
